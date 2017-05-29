@@ -37,6 +37,7 @@ namespace ERP.Api.Models
         public string SDT1 { get; set; }
         public string SDT2 { get; set; }
         public string TINH_TRANG_LAM_VIEC { get; set; }
+        public Nullable<System.DateTime> NGAY_TAO { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BH_BAO_GIA> BH_BAO_GIA { get; set; }

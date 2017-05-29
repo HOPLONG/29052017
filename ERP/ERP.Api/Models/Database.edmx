@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ERP_DATABASEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ERP_DATABASEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BH_BAO_GIA">
           <Key>
             <PropertyRef Name="SO_BAO_GIA" />
@@ -763,6 +763,7 @@
           <Property Name="SDT1" Type="varchar" MaxLength="64" Nullable="false" />
           <Property Name="SDT2" Type="varchar" MaxLength="64" />
           <Property Name="TINH_TRANG_LAM_VIEC" Type="nvarchar" MaxLength="64" />
+          <Property Name="NGAY_TAO" Type="date" />
         </EntityType>
         <EntityType Name="KH_LOAI">
           <Key>
@@ -7391,8 +7392,7 @@
             <End Role="TONKHO_TAHP" EntitySet="TONKHO_TAHP" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ERP_DATABASEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -8508,6 +8508,7 @@
           <NavigationProperty Name="BH_DON_HANG_DU_KIEN" Relationship="Self.FK__BH_DON_HA__ID_LI__4B180DA3" FromRole="KH_LIEN_HE" ToRole="BH_DON_HANG_DU_KIEN" />
           <NavigationProperty Name="KH" Relationship="Self.FK__DM_LIEN_H__MA_KH__7B264821" FromRole="KH_LIEN_HE" ToRole="KH" />
           <NavigationProperty Name="KH_SALES_PHU_TRACH" Relationship="Self.FK__KH_SALES___ID_LI__689D8392" FromRole="KH_LIEN_HE" ToRole="KH_SALES_PHU_TRACH" />
+          <Property Name="NGAY_TAO" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="KH_LOAI">
           <Key>
@@ -14595,17 +14596,17 @@
             <End Role="QUY_CT_PHIEU_THU" EntitySet="QUY_CT_PHIEU_THU" />
           </AssociationSet>
           <FunctionImport Name="BaiVietTheoDanhMuc" ReturnType="Collection(ERP_DATABASEModel.BaiVietTheoDanhMuc_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ChiNhanh_GetAllSale" ReturnType="Collection(ERP_DATABASEModel.ChiNhanh_GetAllSale_Result)">
             <Parameter Name="phongsale" Mode="In" Type="String" />
             <Parameter Name="phongmarketing" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ChiNhanh_LayMaGiuHangMoiNhat">
-            <Parameter Name="machinhanh" Mode="In" Type="String" />
+          <Parameter Name="machinhanh" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ChiNhanh_LayMaKhachMoiNhat" ReturnType="Collection(String)">
-            <Parameter Name="machinhanh" Mode="In" Type="String" />
+          <Parameter Name="machinhanh" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ChiNhanh_LocKHTheoSale">
             <Parameter Name="sale" Mode="In" Type="String" />
@@ -14613,7 +14614,7 @@
             <Parameter Name="machinhanh" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DanhSach_TuanCongNo" ReturnType="Collection(String)">
-            <Parameter Name="makhachhang" Mode="In" Type="String" />
+          <Parameter Name="makhachhang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DS_HANG_HOA" ReturnType="Collection(ERP_DATABASEModel.DS_HANG_HOA_Result)" />
           <FunctionImport Name="DS_TonKhoCacChiNhanh" ReturnType="Collection(ERP_DATABASEModel.DS_TonKhoCacChiNhanh_Result)" />
@@ -14637,19 +14638,19 @@
             <Parameter Name="isadmin" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Get_XL_ThamChieuChungTu" ReturnType="Collection(ERP_DATABASEModel.Get_XL_ThamChieuChungTu_Result)">
-            <Parameter Name="sochungtu" Mode="In" Type="String" />
+          <Parameter Name="sochungtu" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ChiTiet_DeNghiNhapKho" ReturnType="Collection(ERP_DATABASEModel.GetAll_ChiTiet_DeNghiNhapKho_Result)">
-            <Parameter Name="masodn" Mode="In" Type="String" />
+          <Parameter Name="masodn" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ChiTiet_DonBanHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_ChiTiet_DonBanHang_Result)">
-            <Parameter Name="masoBH" Mode="In" Type="String" />
+          <Parameter Name="masoBH" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ChiTiet_DonHangPO" ReturnType="Collection(ERP_DATABASEModel.GetAll_ChiTiet_DonHangPO_Result)">
-            <Parameter Name="masoPO" Mode="In" Type="String" />
+          <Parameter Name="masoPO" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ChiTiet_DonHangPO_MuaHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_ChiTiet_DonHangPO_MuaHang_Result)">
-            <Parameter Name="masoPO" Mode="In" Type="String" />
+          <Parameter Name="masoPO" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ChiTietBaoGia" ReturnType="Collection(ERP_DATABASEModel.GetAll_ChiTietBaoGia_Result)">
             <Parameter Name="so_bao_gia" Mode="In" Type="String" />
@@ -14658,7 +14659,7 @@
           <FunctionImport Name="GetAll_CongTy" ReturnType="Collection(ERP_DATABASEModel.GetAll_CongTy_Result)" />
           <FunctionImport Name="GetAll_DeNghiMuaHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_DeNghiMuaHang_Result)" />
           <FunctionImport Name="GetAll_DonBanHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_DonBanHang_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_DonBanHangChuaXuat" ReturnType="Collection(ERP_DATABASEModel.GetAll_DonBanHangChuaXuat_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -14696,13 +14697,13 @@
           </FunctionImport>
           <FunctionImport Name="GetAll_KhachHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_KhachHang_Result)" />
           <FunctionImport Name="GetAll_KhachHang_ChiNhanh" ReturnType="Collection(ERP_DATABASEModel.GetAll_KhachHang_ChiNhanh_Result)">
-            <Parameter Name="machinhanh" Mode="In" Type="String" />
+          <Parameter Name="machinhanh" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_LienHeTheoKhach" ReturnType="Collection(ERP_DATABASEModel.GetAll_LienHeTheoKhach_Result)">
-            <Parameter Name="makhachhang" Mode="In" Type="String" />
+          <Parameter Name="makhachhang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_LienHeTheoNCC" ReturnType="Collection(ERP_DATABASEModel.GetAll_LienHeTheoNCC_Result)">
-            <Parameter Name="manhacungcap" Mode="In" Type="String" />
+          <Parameter Name="manhacungcap" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_List_XuatHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_List_XuatHang_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -14740,22 +14741,22 @@
             <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ThongTinChiTietBaoGia" ReturnType="Collection(ERP_DATABASEModel.GetAll_ThongTinChiTietBaoGia_Result)">
-            <Parameter Name="sobaogia" Mode="In" Type="String" />
+          <Parameter Name="sobaogia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ThongTinChungDonBanHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_ThongTinChungDonBanHang_Result)">
-            <Parameter Name="masoBH" Mode="In" Type="String" />
+          <Parameter Name="masoBH" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ThongTinChungDonHangPO" ReturnType="Collection(ERP_DATABASEModel.GetAll_ThongTinChungDonHangPO_Result)">
-            <Parameter Name="masoPO" Mode="In" Type="String" />
+          <Parameter Name="masoPO" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ThongTinChungDonHangPO_MuaHang" ReturnType="Collection(ERP_DATABASEModel.GetAll_ThongTinChungDonHangPO_MuaHang_Result)">
-            <Parameter Name="masoPO" Mode="In" Type="String" />
+          <Parameter Name="masoPO" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAll_ThongTinGiaoViec" ReturnType="Collection(ERP_DATABASEModel.GetAll_ThongTinGiaoViec_Result)">
-            <Parameter Name="manhanvien" Mode="In" Type="String" />
+          <Parameter Name="manhanvien" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAllChungTu" ReturnType="Collection(ERP_DATABASEModel.GetAllChungTu_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetAllChungTu_WithDate" ReturnType="Collection(ERP_DATABASEModel.GetAllChungTu_WithDate_Result)">
             <Parameter Name="FromDate" Mode="In" Type="DateTime" />
@@ -14786,11 +14787,11 @@
             <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetChungTuFromLoai">
-            <Parameter Name="LoaiChungTu" Mode="In" Type="String" />
+          <Parameter Name="LoaiChungTu" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetChungTuTra" ReturnType="Collection(ERP_DATABASEModel.GetChungTuTra_Result)" />
           <FunctionImport Name="GetChungTuTra_ByKhachHang" ReturnType="Collection(ERP_DATABASEModel.GetChungTuTra_ByKhachHang_Result)">
-            <Parameter Name="makhachhang" Mode="In" Type="String" />
+          <Parameter Name="makhachhang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetChungTuTra_ByKhachHangWithDate" ReturnType="Collection(ERP_DATABASEModel.GetChungTuTra_ByKhachHangWithDate_Result)">
             <Parameter Name="makhachhang" Mode="In" Type="String" />
@@ -14806,7 +14807,7 @@
             <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetDeNghiMuaHang" ReturnType="Collection(ERP_DATABASEModel.GetDeNghiMuaHang_Result)">
-            <Parameter Name="masodn" Mode="In" Type="String" />
+          <Parameter Name="masodn" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetDonBanHang" ReturnType="Collection(ERP_DATABASEModel.GetDonBanHang_Result)">
             <Parameter Name="masobanhang" Mode="In" Type="String" />
@@ -14821,13 +14822,13 @@
             <Parameter Name="ngay" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="GetHTCongViecNV" ReturnType="Collection(ERP_DATABASEModel.GetHTCongViecNV_Result)">
-            <Parameter Name="username" Mode="In" Type="String" />
+          <Parameter Name="username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetHTNhiemVuPhongBan" ReturnType="Collection(ERP_DATABASEModel.GetHTNhiemVuPhongBan_Result)">
-            <Parameter Name="maphongban" Mode="In" Type="String" />
+          <Parameter Name="maphongban" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetHTThongBaoMark" ReturnType="Collection(ERP_DATABASEModel.GetHTThongBaoMark_Result)">
-            <Parameter Name="username" Mode="In" Type="String" />
+          <Parameter Name="username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GetPhieuXuatKho" ReturnType="Collection(ERP_DATABASEModel.GetPhieuXuatKho_Result)">
             <Parameter Name="sochungtu" Mode="In" Type="String" />
@@ -14843,7 +14844,7 @@
           </FunctionImport>
           <FunctionImport Name="HopLong_GetAll_Nhanvien_Kho" ReturnType="Collection(ERP_DATABASEModel.HopLong_GetAll_Nhanvien_Kho_Result)" />
           <FunctionImport Name="HopLong_GetAll_Nhanvien_MuaHang" ReturnType="Collection(ERP_DATABASEModel.HopLong_GetAll_Nhanvien_MuaHang_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="HopLong_GetAll_Nhanvienhl" ReturnType="Collection(ERP_DATABASEModel.HopLong_GetAll_Nhanvienhl_Result)" />
           <FunctionImport Name="HopLong_GetAllSale" ReturnType="Collection(ERP_DATABASEModel.HopLong_GetAllSale_Result)" />
@@ -14941,10 +14942,10 @@
             <Parameter Name="ismarketing" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Prod_BH_GetThongTin_CT_BaoGia" ReturnType="Collection(ERP_DATABASEModel.Prod_BH_GetThongTin_CT_BaoGia_Result)">
-            <Parameter Name="so_bao_gia" Mode="In" Type="String" />
+          <Parameter Name="so_bao_gia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_BH_GetThongTinBaoGia" ReturnType="Collection(ERP_DATABASEModel.Prod_BH_GetThongTinBaoGia_Result)">
-            <Parameter Name="so_bao_gia" Mode="In" Type="String" />
+          <Parameter Name="so_bao_gia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_BH_List_DonBanHang" ReturnType="Collection(ERP_DATABASEModel.Prod_BH_List_DonBanHang_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15057,16 +15058,16 @@
             <Parameter Name="salequanly" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_CCTC_GetAllNhanVien" ReturnType="Collection(ERP_DATABASEModel.Prod_CCTC_GetAllNhanVien_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_CCTC_GetAllSale" ReturnType="Collection(ERP_DATABASEModel.Prod_CCTC_GetAllSale_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_CCTC_NhanVienPhongBan" ReturnType="Collection(ERP_DATABASEModel.Prod_CCTC_NhanVienPhongBan_Result)">
-            <Parameter Name="maphongban" Mode="In" Type="String" />
+          <Parameter Name="maphongban" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_CCTC_PhongBan" ReturnType="Collection(ERP_DATABASEModel.Prod_CCTC_PhongBan_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_Comments_CongNoKH" ReturnType="Collection(ERP_DATABASEModel.Prod_Comments_CongNoKH_Result)">
             <Parameter Name="makh" Mode="In" Type="String" />
@@ -15074,13 +15075,13 @@
           </FunctionImport>
           <FunctionImport Name="Prod_DM_TaiKhoanHachToan" ReturnType="Collection(ERP_DATABASEModel.Prod_DM_TaiKhoanHachToan_Result)" />
           <FunctionImport Name="Prod_GetAll_Marketing" ReturnType="Collection(ERP_DATABASEModel.Prod_GetAll_Marketing_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_GetAllDoiTuong" ReturnType="Collection(ERP_DATABASEModel.Prod_GetAllDoiTuong_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_GetNotifications" ReturnType="Collection(ERP_DATABASEModel.Prod_GetNotifications_Result)">
-            <Parameter Name="username" Mode="In" Type="String" />
+          <Parameter Name="username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_HangCanDat" ReturnType="Collection(ERP_DATABASEModel.Prod_HangCanDat_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15167,7 +15168,7 @@
             <Parameter Name="username" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_HH_Comments" ReturnType="Collection(ERP_DATABASEModel.Prod_HH_Comments_Result)">
-            <Parameter Name="mahang" Mode="In" Type="String" />
+          <Parameter Name="mahang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_HH_GetAllHH" ReturnType="Collection(ERP_DATABASEModel.Prod_HH_GetAllHH_Result)" />
           <FunctionImport Name="Prod_HH_GetHH_TheoNhom" ReturnType="Collection(ERP_DATABASEModel.Prod_HH_GetHH_TheoNhom_Result)">
@@ -15177,7 +15178,7 @@
             <Parameter Name="isadmin" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Prod_HT_GetListPhanHoi" ReturnType="Collection(ERP_DATABASEModel.Prod_HT_GetListPhanHoi_Result)">
-            <Parameter Name="isadmin" Mode="In" Type="Boolean" />
+          <Parameter Name="isadmin" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_Cong_no" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_Cong_no_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15190,10 +15191,10 @@
             <Parameter Name="mahang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_Get_ChiTiet_KhachHang" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_Get_ChiTiet_KhachHang_Result)">
-            <Parameter Name="makhachhang" Mode="In" Type="String" />
+          <Parameter Name="makhachhang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_GetAll" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_GetAll_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_GetKhachCuaSale" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_GetKhachCuaSale_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15201,14 +15202,14 @@
             <Parameter Name="isadmin" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_GetPolicy" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_GetPolicy_Result)">
-            <Parameter Name="makhachhang" Mode="In" Type="String" />
+          <Parameter Name="makhachhang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_GetThongKeMuaHang" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_GetThongKeMuaHang_Result)">
             <Parameter Name="makhach" Mode="In" Type="String" />
             <Parameter Name="page" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_GetTongSoKhach" ReturnType="Collection(Int32)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_ListKhachKhongMuaGanDay" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_ListKhachKhongMuaGanDay_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15231,10 +15232,10 @@
             <Parameter Name="ismarketing" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Prod_KH_ShowLienHe" ReturnType="Collection(ERP_DATABASEModel.Prod_KH_ShowLienHe_Result)">
-            <Parameter Name="makhachhang" Mode="In" Type="String" />
+          <Parameter Name="makhachhang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KHO_DanhSachKho" ReturnType="Collection(ERP_DATABASEModel.Prod_KHO_DanhSachKho_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KHO_GetAllTon" ReturnType="Collection(ERP_DATABASEModel.Prod_KHO_GetAllTon_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15254,16 +15255,16 @@
             <Parameter Name="mahang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KHO_ListBHCanXuat" ReturnType="Collection(ERP_DATABASEModel.Prod_KHO_ListBHCanXuat_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_Kho_ListGiuHang" ReturnType="Collection(ERP_DATABASEModel.Prod_Kho_ListGiuHang_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KHO_ListHangGiuChuaBan" ReturnType="Collection(ERP_DATABASEModel.Prod_KHO_ListHangGiuChuaBan_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KHO_ListPoCanGiuHang" ReturnType="Collection(ERP_DATABASEModel.Prod_KHO_ListPoCanGiuHang_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_KHO_TachGopMa" ReturnType="Collection(ERP_DATABASEModel.Prod_KHO_TachGopMa_Result)" />
           <FunctionImport Name="Prod_ListDonMuaHangPO" ReturnType="Collection(ERP_DATABASEModel.Prod_ListDonMuaHangPO_Result)">
@@ -15282,7 +15283,7 @@
             <Parameter Name="isadmin" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Prod_ListHangGiuTongHop_KD" ReturnType="Collection(ERP_DATABASEModel.Prod_ListHangGiuTongHop_KD_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_LocDonHangPO" ReturnType="Collection(ERP_DATABASEModel.Prod_LocDonHangPO_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15293,14 +15294,14 @@
             <Parameter Name="dangduyet" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Prod_MH_LoadXuLyYeuCauHoiGia" ReturnType="Collection(ERP_DATABASEModel.Prod_MH_LoadXuLyYeuCauHoiGia_Result)">
-            <Parameter Name="id_YCHG" Mode="In" Type="Int32" />
+          <Parameter Name="id_YCHG" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Prod_MH_NhatKyHoiGia" ReturnType="Collection(ERP_DATABASEModel.Prod_MH_NhatKyHoiGia_Result)">
             <Parameter Name="mahang" Mode="In" Type="String" />
             <Parameter Name="tructhuoc" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_MH_XL_YeuCauHoiHang" ReturnType="Collection(ERP_DATABASEModel.Prod_MH_XL_YeuCauHoiHang_Result)">
-            <Parameter Name="mahang" Mode="In" Type="String" />
+          <Parameter Name="mahang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_MH_XuLyYeuCauHoiGia" ReturnType="Collection(ERP_DATABASEModel.Prod_MH_XuLyYeuCauHoiGia_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15309,13 +15310,13 @@
           </FunctionImport>
           <FunctionImport Name="Prod_MH_YeuCauHoiHang" ReturnType="Collection(ERP_DATABASEModel.Prod_MH_YeuCauHoiHang_Result)" />
           <FunctionImport Name="Prod_NCC_ShowLienHe" ReturnType="Collection(ERP_DATABASEModel.Prod_NCC_ShowLienHe_Result)">
-            <Parameter Name="mancc" Mode="In" Type="String" />
+          <Parameter Name="mancc" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_NV_LichLamViec" ReturnType="Collection(ERP_DATABASEModel.Prod_NV_LichLamViec_Result)">
-            <Parameter Name="macongty" Mode="In" Type="String" />
+          <Parameter Name="macongty" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_TonKho_GIA" ReturnType="Collection(ERP_DATABASEModel.Prod_TonKho_GIA_Result)">
-            <Parameter Name="mahang" Mode="In" Type="String" />
+          <Parameter Name="mahang" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Prod_UNC_GetAll" ReturnType="Collection(ERP_DATABASEModel.Prod_UNC_GetAll_Result)">
             <Parameter Name="macongty" Mode="In" Type="String" />
@@ -15351,30 +15352,30 @@
           </FunctionImport>
           <FunctionImport Name="TADN_GetChungTuTra" ReturnType="Collection(ERP_DATABASEModel.TADN_GetChungTuTra_Result)" />
           <FunctionImport Name="TADN_TONKHO">
-            <Parameter Name="MA_CHUAN" Mode="In" Type="String" />
+          <Parameter Name="MA_CHUAN" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TAHCM_GetChungTuTra" ReturnType="Collection(ERP_DATABASEModel.TAHCM_GetChungTuTra_Result)" />
           <FunctionImport Name="TAHCM_TONKHO">
-            <Parameter Name="MA_CHUAN" Mode="In" Type="String" />
+          <Parameter Name="MA_CHUAN" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TAHP_GetChungTuTra" ReturnType="Collection(ERP_DATABASEModel.TAHP_GetChungTuTra_Result)" />
           <FunctionImport Name="TAHP_TONKHO">
-            <Parameter Name="MA_CHUAN" Mode="In" Type="String" />
+          <Parameter Name="MA_CHUAN" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="TimKiemKhachHang" ReturnType="Collection(ERP_DATABASEModel.TimKiemKhachHang_Result)">
-            <Parameter Name="sdt" Mode="In" Type="String" />
+          <Parameter Name="sdt" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="XL_CHUYEN_SALES" ReturnType="Collection(ERP_DATABASEModel.XL_CHUYEN_SALES_Result)">
-            <Parameter Name="sale" Mode="In" Type="String" />
+          <Parameter Name="sale" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="XL_CHUYEN_SALES_CHI_NHANH">
-            <Parameter Name="machinhanh" Mode="In" Type="String" />
+          <Parameter Name="machinhanh" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="XL_LayBaoGiaMoiNhat" ReturnType="Collection(String)" />
           <FunctionImport Name="XL_LayMaGiuHangMoiNhat" />
           <FunctionImport Name="XL_LayMaKhachMoiNhat" ReturnType="Collection(String)" />
           <FunctionImport Name="XL_TimKiemHangHoa" ReturnType="Collection(ERP_DATABASEModel.XL_TimKiemHangHoa_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="XL_TongSoKH_HL" ReturnType="Collection(Int32)" />
         </EntityContainer>
@@ -19338,6 +19339,7 @@
           <EntitySetMapping Name="KH_LIEN_HE">
             <EntityTypeMapping TypeName="ERP_DATABASEModel.KH_LIEN_HE">
               <MappingFragment StoreEntitySet="KH_LIEN_HE">
+                <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
                 <ScalarProperty Name="ID_LIEN_HE" ColumnName="ID_LIEN_HE" />
                 <ScalarProperty Name="MA_KHACH_HANG" ColumnName="MA_KHACH_HANG" />
                 <ScalarProperty Name="NGUOI_LIEN_HE" ColumnName="NGUOI_LIEN_HE" />
