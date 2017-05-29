@@ -21,7 +21,7 @@
         $http({
             method: 'PUT',
             data: $scope.YeuCau,
-            url: window.location.origin + '/api/Api_YeuCauHoiGia/' + id
+            url: window.location.origin + 'http://27.72.144.148:8003/api/Api_YeuCauHoiGia/' + id
         }).then(function successCallback(response) {
             SuccessSystem('Bạn vừa nhận 1 yêu cầu hỏi giá');
             $scope.get_yeucau();

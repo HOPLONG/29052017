@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ERP.Web.Models.BusinessModel
+namespace ERP.Api.Models.ModelAll
 {
     public class AuthorizeBussiness : ActionFilterAttribute
     {

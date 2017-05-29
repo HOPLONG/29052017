@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.NewModels.Quy
+namespace ERP.Api.Models.NewModel.Quy
 {
     public class ChiTietQuyPhieuThu
     {

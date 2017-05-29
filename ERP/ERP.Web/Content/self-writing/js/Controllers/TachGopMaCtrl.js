@@ -1,7 +1,7 @@
 ﻿app.controller('TachGopMaCtrl', function ($scope, $http) {
     //Tìm Kiếm hàng hóa
     $scope.load_hanghoa = function (tukhoa) {
-        $http.get("/api/Api_FindHH/"+tukhoa)
+        $http.get("http://27.72.144.148:8003/api/Api_FindHH/"+tukhoa)
            .then(function successCallback(response) {
                $scope.dshanghoa = response.data;
            }, function errorCallback(response) {
@@ -182,7 +182,7 @@
    //load danh sách
     $scope.LoadDSTachGopMa = function(){
 
-        $http.get("/api/Api_TachGopMaHang")
+        $http.get("http://27.72.144.148:8003/api/Api_TachGopMaHang")
           .then(function successCallback(response) {
               $scope.danhsachtachgop = response.data;
           }, function errorCallback(response) {
@@ -268,7 +268,7 @@
             SL_MA_DICH_25: $scope.sl_ma_dich_25,
         }
 
-        $http.post("/api/Api_TachGopMaHang", data_add)
+        $http.post("http://27.72.144.148:8003/api/Api_TachGopMaHang", data_add)
           .then(function successCallback(response) {
               SuccessSystem('Bạn đã khởi tạo thành công 1 mã tách');
               $scope.LoadDSTachGopMa();

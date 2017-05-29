@@ -1,10 +1,11 @@
-﻿using ERP.Web.Models.NewModels.All;
+﻿
+using ERP.Api.Models.ModelAll;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.NewModels.NhapKho
+namespace ERP.Api.Models.NewModel.NhapKhoMH
 {
     public class NhapKhoMH
     {

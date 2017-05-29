@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ERP.Web.Api.BaiViet
+namespace ERP.Api.Controllers.Posts
 {
     public class Api_BaiViet_TongHopController : ApiController
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Common
+namespace ERP.Api.Models.ModelAll
 {
     public class Constant
     {

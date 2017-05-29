@@ -12,7 +12,7 @@
 
     //hàm tìm kiếm
     $scope.getdataBaoGia = function (sobaogia) {
-        $http.post(window.location.origin + '/api/Api_BaoGia/PrintBaoGia/' +sobaogia)
+        $http.post('http://27.72.144.148:8003/api/Api_BaoGia/PrintBaoGia/' + sobaogia)
          .then(function (response) {
              if (response.data) {
                  $scope.thongtinbaogia = response.data;
