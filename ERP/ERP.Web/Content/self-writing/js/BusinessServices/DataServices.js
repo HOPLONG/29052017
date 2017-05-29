@@ -19,20 +19,22 @@
         return service;
 
         function getTaiKhoanNganHang(data, successFunction, errorFunction, ui) {
-            ajaxService.AjaxGetWithData(data, "/api/Api_LoaiTKnganhangnoibo", successFunction, errorFunction, ui);
+
+            ajaxService.AjaxGetWithData(data, "http://27.72.144.148:8003/api/Api_LoaiTKnganhangnoibo", successFunction, errorFunction, ui);
         }
 
         function getDanhSachPhieuThuNganHang(data, successFunction, errorFunction, ui) {
-            ajaxService.AjaxGetWithData(data, "/api/Api_NganHang/", successFunction, errorFunction, ui);
+            ajaxService.AjaxGetWithData(data, "http://27.72.144.148:8003/api/Api_NganHang/", successFunction, errorFunction, ui);
         }
         function getDanhSachPhieuChiNganHang(data, successFunction, errorFunction, ui) {
-            ajaxService.AjaxGetWithData(data, "/api/Api_NH_UNC", successFunction, errorFunction, ui);
+            ajaxService.AjaxGetWithData(data, "http://27.72.144.148:8003/api/Api_NH_UNC", successFunction, errorFunction, ui);
         }
         function getDanhSachPhieuThuTienMat(data, successFunction, errorFunction, ui) {
-            ajaxService.AjaxGetWithData(data, "/api/Api_QUY_PHIEU_THU", successFunction, errorFunction, ui);
+            ajaxService.AjaxGetWithData(data, "http://27.72.144.148:8003/api/Api_QUY_PHIEU_THU", successFunction, errorFunction, ui);
         }
         function getDanhSachPhieuChiTienMat(data, successFunction, errorFunction, ui) {
-            ajaxService.AjaxGetWithData(data, "/api/Api_QUY_PHIEU_CHI", successFunction, errorFunction, ui);
+            ajaxService.AjaxGetWithData(data, "http://27.72.144.148:8003/api/Api_QUY_PHIEU_CHI", successFunction, errorFunction, ui);
+
         }
         
     };
