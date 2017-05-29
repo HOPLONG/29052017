@@ -139,7 +139,7 @@
                 $http({
                     method: 'PUT',
                     data: $scope.arrayChiTietBH,
-                    url: window.location.origin + '/api/Api_ChiTietBanHang/PUTBH_CT_BAN_HANG'
+                    url: 'http://27.72.144.148:8003/api/Api_ChiTietBanHang/PUTBH_CT_BAN_HANG'
                 }).then(function successCallback(response) {
                     SuccessSystem("Hoàn Thành Lưu");
                 }, function errorCallback(response) {
@@ -206,7 +206,7 @@
         $http({
             method: 'POST',
             data: $scope.SoNhatKy,
-            url: window.location.origin + '/api/Api_SoNhatKyChung/PostKT_SO_NHAT_KY_CHUNG'
+            url: 'http://27.72.144.148:8003/api/Api_SoNhatKyChung/PostKT_SO_NHAT_KY_CHUNG'
         }).then(function successCallback(response) {
             SuccessSystem("Lên sổ nhật ký chung thành công");
         }, function errorCallback(response) {
@@ -246,7 +246,7 @@
     //    });
 
     //get data nguoi giu
-    $http.get(window.location.origin + '/api/Api_KH/GetAllSale')
+    $http.get('http://27.72.144.148:8003/api/Api_KH/GetAllSale')
          .then(function (response) {
              $scope.list_nhanvienql = response.data;
          }, function (error) {
@@ -338,7 +338,7 @@
     }
 
     // Phan trang list don hang PO
-    $http.post('/api/Api_BanHang/DemTongSoDonBanHang', thamso).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_BanHang/DemTongSoDonBanHang', thamso).then(function (response) {
         $scope.tongsodonBanHang = response.data;
         pagination2.make(parseInt($scope.tongsodonBanHang), 15);
     });
@@ -355,7 +355,7 @@
         $http({
             method: 'POST',
             data: datas,
-            url: window.location.origin + '/api/Api_BanHang/ListDonBanHang/' + pageNumber
+            url: 'http://27.72.144.148:8003/api/Api_BanHang/ListDonBanHang/' + pageNumber
         }).then(function successCallback(response) {
             $scope.list_donbanhang_kinhdoanh = response.data;
         });
@@ -382,7 +382,7 @@
         }
         window.setInterval(function () {
             // List bao gia kinh doanh
-            $http.post('/api/Api_BanHang/ListDonBanHang/' + pageNumber, datas).then(function (response) {
+            $http.post('http://27.72.144.148:8003/api/Api_BanHang/ListDonBanHang/' + pageNumber, datas).then(function (response) {
                 $scope.list_donbanhang_kinhdoanh = response.data;
             });
         }, 5000);
@@ -414,15 +414,15 @@
         }
 
         // List don ban hang
-        $http.post('/api/Api_BanHang/ListDonBanHang/' + pageNumber,datas).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_BanHang/ListDonBanHang/' + pageNumber, datas).then(function (response) {
             $scope.list_donbanhang_kinhdoanh = response.data;
         });
         //List don ban hang chua xuat kho
-        $http.post('/api/Api_BanHang/ListDonBanHangChuaXuatKho/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_BanHang/ListDonBanHangChuaXuatKho/' + isadmin + '/' + username).then(function (response) {
             $scope.list_donbanhangchuaxuatkho_kinhdoanh = response.data;
         });
         // List don ban hang da xuat kho
-        $http.post('/api/Api_BanHang/ListDonBanHangDaXuatKho/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_BanHang/ListDonBanHangDaXuatKho/' + isadmin + '/' + username).then(function (response) {
             $scope.list_donbanhangdaxuatkho_kinhdoanh = response.data;
         });
 

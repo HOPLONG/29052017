@@ -16,7 +16,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
     var macongty = $('#macongty').val();
 
     $scope.get_nhomhang = function () {
-        $http.get("/api/Api_NhomVTHHHL").then(function (response) {
+        $http.get("http://27.72.144.148:8003/api/Api_NhomVTHHHL").then(function (response) {
             $scope.danhsachnhomhang = response.data;
         });
     }
@@ -117,7 +117,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
             $http({
                 method: 'DELETE',
                 data: $scope.Detail.ListXoa,
-                url: window.location.origin + '/api/Api_ChiTietBaoGia/XoaCT_BAO_GIA/' + $scope.Detail.ListXoa[0].ID
+                url: 'http://27.72.144.148:8003/api/Api_ChiTietBaoGia/XoaCT_BAO_GIA/' + $scope.Detail.ListXoa[0].ID
             }).then(function successCallback(response) {
                 alert("Xóa thành công");
 
@@ -196,7 +196,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                 $http({
                     method: 'PUT',
                     data: $scope.Bao_Gia,
-                    url: window.location.origin + '/api/Api_BaoGia/' + $scope.Bao_Gia.SO_BAO_GIA
+                    url: 'http://27.72.144.148:8003/api/Api_BaoGia/' + $scope.Bao_Gia.SO_BAO_GIA
                 }).then(function successCallback(response) {
                     $scope.Bao_Gia = response.data;
 
@@ -211,7 +211,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                         $http({
                             method: 'POST',
                             data: $scope.arrayChiTietBaoGia,
-                            url: window.location.origin + '/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
+                            url: 'http://27.72.144.148:8003/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
                         }).then(function successCallback(response) {
                             SuccessSystem("Hoàn Thành Lưu");
                         }, function errorCallback(response) {
@@ -677,7 +677,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'PUT',
             data: $scope.Bao_Gia,
-            url: window.location.origin + '/api/Api_BaoGia/' + $scope.Bao_Gia.SO_BAO_GIA
+            url: 'http://27.72.144.148:8003/api/Api_BaoGia/' + $scope.Bao_Gia.SO_BAO_GIA
         }).then(function successCallback(response) {
             $scope.Bao_Gia = response.data;
 
@@ -692,7 +692,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                 $http({
                     method: 'POST',
                     data: $scope.arrayChiTietBaoGia,
-                    url: window.location.origin + '/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
+                    url: 'http://27.72.144.148:8003/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
                 }).then(function successCallback(response) {
                     SuccessSystem("Hoàn Thành Lưu");
                 }, function errorCallback(response) {
@@ -780,7 +780,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         }
 
         //Lưu vào CSDL
-        $http.post("/api/Api_BaoGia/PostBH_BAO_GIA", $scope.BANGBAOGIA)
+        $http.post("http://27.72.144.148:8003/api/Api_BaoGia/PostBH_BAO_GIA", $scope.BANGBAOGIA)
             .then(function successCallback(response) {
                 $scope.BANGBAOGIA = response.data;
                 if (!$scope.BANGBAOGIA) {
@@ -795,7 +795,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
 
                 if ($scope.arrayBaoGiaChiTiet.length > 0) {
-                    $http.post("/api/ApiChiTietBaoGia/PostKH_LIEN_HE", $scope.arrayBaoGiaChiTiet)
+                    $http.post("http://27.72.144.148:8003/api/ApiChiTietBaoGia/PostKH_LIEN_HE", $scope.arrayBaoGiaChiTiet)
                         .then(function successCallback(response) {
                             SuccessSystem("Lưu thành công!");
                             location.reload();
@@ -872,7 +872,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'POST',
             data: $scope.arrayChiTietBaoGia,
-            url: window.location.origin + '/api/Api_ChiTietBaoGia/TachBaoGia/' + $scope.BangBaoGia[0].SO_BAO_GIA,
+            url: 'http://27.72.144.148:8003/api/Api_ChiTietBaoGia/TachBaoGia/' + $scope.BangBaoGia[0].SO_BAO_GIA,
         }).then(function successCallback(response) {
             SuccessSystem('Tách thành công báo giá mới' + response.data);
 
@@ -974,7 +974,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
     };
 
     $scope.GopBaoGia = function () {
-        $http.post('/api/Api_BaoGia/GopBaoGia/' + $scope.baogia1 + '/' + $scope.baogia2).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_BaoGia/GopBaoGia/' + $scope.baogia1 + '/' + $scope.baogia2).then(function (response) {
             SuccessSystem('Gộp 2 báo giá thành báo giá ' + response.data + 'thành công');
         }, function errorCallback(response) {
             ErrorSystem('Gộp báo giá không thành công');
@@ -1043,7 +1043,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'POST',
             data: $scope.Bao_Gia,
-            url: window.location.origin + '/api/Api_DonHangPO/PostDon_Hang_PO'
+            url: 'http://27.72.144.148:8003/api/Api_DonHangPO/PostDon_Hang_PO'
         }).then(function successCallback(response) {
             SuccessSystem('Bạn đã tạo thành công 1 đơn PO có mã là ' + response.data)
             $scope.PhuongAnKD = {
@@ -1075,7 +1075,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
             $http({
                 method: 'POST',
                 data: $scope.PhuongAnKD,
-                url: window.location.origin + '/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
+                url: 'http://27.72.144.148:8003/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
             }).then(function successCallback(response) {
                 SuccessSystem('Bạn đã tạo thành công 1 PAKD có mã là ' + response.data.MA_SO_PAKD);
 
@@ -1102,7 +1102,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
     //get data khách hàng
 
-    $http.get(window.location.origin + '/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi + '/' + isadmin)
+    $http.get('http://27.72.144.148:8003/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi + '/' + isadmin)
 
          .then(function (response) {
              if (response.data) {
@@ -1155,7 +1155,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
     $scope.showtable_sale_giu = false;
 
     //get data nguoi giu
-    $http.get(window.location.origin + '/api/Api_KH/GetAllSale')
+    $http.get('http://27.72.144.148:8003/api/Api_KH/GetAllSale')
          .then(function (response) {
              if (response.data) {
                  $scope.arrayNG = response.data;
@@ -1207,7 +1207,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
         var makh = $scope.arrayKhachHang.ma_khach_hang;
         //get data nguoi giu
-        $http.get(window.location.origin + '/api/Api_BaoGia/GetLienHeKhach/' + makh)
+        $http.get('http://27.72.144.148:8003/api/Api_BaoGia/GetLienHeKhach/' + makh)
              .then(function (response) {
                  if (response.data) {
                      $scope.arrayLH = response.data;
@@ -1253,7 +1253,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'GET',
             data: machuan,
-            url: window.location.origin + '/api/Api_TonKhoHL/GetHH_TON_KHO/' + machuan
+            url: 'http://27.72.144.148:8003/api/Api_TonKhoHL/GetHH_TON_KHO/' + machuan
         }).then(function successCallback(response) {
             $scope.danhsachhanghoa = response.data;
 
@@ -1312,7 +1312,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'GET',
             data: machuan,
-            url: window.location.origin + '/api/Api_TonKhoHL/GetHH_TON_KHO/' + machuan
+            url: 'http://27.72.144.148:8003/api/Api_TonKhoHL/GetHH_TON_KHO/' + machuan
         }).then(function successCallback(response) {
             $scope.danhsachhanghoa = response.data;
 
@@ -1375,7 +1375,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'GET',
             data: machuan,
-            url: window.location.origin + '/api/Api_TonKhoHL/GetHH_TON_KHO/' + machuan
+            url: 'http://27.72.144.148:8003/api/Api_TonKhoHL/GetHH_TON_KHO/' + machuan
         }).then(function successCallback(response) {
             $scope.danhsachhanghoaluu = response.data;
 
@@ -1473,7 +1473,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
     var inputChangedPromise;
     //hàm tìm kiếm
     $scope.onHHFind = function (mh) {
-        $http.get(window.location.origin + '/api/Api_HanghoaHL/GetAllHHBaoGia/' + mh)
+        $http.get('http://27.72.144.148:8003/api/Api_HanghoaHL/GetAllHHBaoGia/' + mh)
          .then(function (response) {
              if (response.data) {
                  $scope.arrayHH = response.data;
@@ -1561,7 +1561,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
     //hàm tìm kiếm
     $scope.onHHEditFind = function (mh) {
-        $http.get(window.location.origin + '/api/Api_HanghoaHL/GetAllHHBaoGia/' + mh)
+        $http.get('http://27.72.144.148:8003/api/Api_HanghoaHL/GetAllHHBaoGia/' + mh)
          .then(function (response) {
              if (response.data) {
                  $scope.arrayHHEdit = response.data;
@@ -1787,7 +1787,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
     $scope.lienhekh = function (url) {
         //get data liên hệ
-        $http.post(window.location.origin + '/api/Api_LienHeKhachHang/' + url)
+        $http.post('http://27.72.144.148:8003/api/Api_LienHeKhachHang/' + url)
              .then(function (response) {
                  if (response.data) {
                      $scope.arrayLH = response.data;
@@ -1896,7 +1896,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         }
 
         //Lưu vào CSDL
-        $http.post("/api/Api_BaoGia/BaoGiaTuKhach", $scope.BANGBAOGIA)
+        $http.post("http://27.72.144.148:8003/api/Api_BaoGia/BaoGiaTuKhach", $scope.BANGBAOGIA)
             .then(function successCallback(response) {
                 $scope.BANGBAOGIA = response.data;
                 if (!$scope.BANGBAOGIA) {
@@ -1909,7 +1909,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                     $scope.arrayBaoGiaChiTiet[i].SO_BAO_GIA = $scope.BANGBAOGIA.SO_BAO_GIA;
                 }
                 if ($scope.arrayBaoGiaChiTiet.length > 0) {
-                    $http.post("/api/ApiChiTietBaoGia/PostKH_LIEN_HE", $scope.arrayBaoGiaChiTiet)
+                    $http.post("http://27.72.144.148:8003/api/ApiChiTietBaoGia/PostKH_LIEN_HE", $scope.arrayBaoGiaChiTiet)
                         .then(function successCallback(response) {
                             SuccessSystem("Lưu thành công!");
                             $scope.createnewPOvalue = true;
@@ -1990,7 +1990,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'POST',
             data: $scope.Bao_Gia,
-            url: window.location.origin + '/api/Api_DonHangPO/PostDon_Hang_PO'
+            url: 'http://27.72.144.148:8003/api/Api_DonHangPO/PostDon_Hang_PO'
         }).then(function successCallback(response) {
             SuccessSystem('Bạn đã tạo thành công 1 đơn PO có mã là ' + response.data);
 
@@ -2024,7 +2024,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
             $http({
                 method: 'POST',
                 data: $scope.PhuongAnKD,
-                url: window.location.origin + '/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
+                url: 'http://27.72.144.148:8003/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
             }).then(function successCallback(response) {
                 SuccessSystem('Bạn đã tạo thành công 1 PAKD có mã là ' + response.data.MA_SO_PAKD);
             }, function errorCallback(response) {
@@ -2048,7 +2048,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         //this removes everything before the last slash in the path
         url = url.substring(url.lastIndexOf("/") + 1, url.length);
 
-        $http.get('/api/Api_KH/GetCT_KH/' + url).then(function (response) {
+        $http.get('http://27.72.144.148:8003/api/Api_KH/GetCT_KH/' + url).then(function (response) {
             $scope.list_chitietkhachhangnew = response.data;
         });
     };
@@ -2116,7 +2116,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         }
 
         //Lưu vào CSDL
-        $http.post("/api/Api_BaoGia/BaoGiaTuKhach", $scope.BANGBAOGIA)
+        $http.post("http://27.72.144.148:8003/api/Api_BaoGia/BaoGiaTuKhach", $scope.BANGBAOGIA)
             .then(function successCallback(response) {
                 $scope.BANGBAOGIA = response.data;
                 if (!$scope.BANGBAOGIA) {
@@ -2131,7 +2131,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
 
                 if ($scope.arrayBaoGiaChiTiet.length > 0) {
-                    $http.post("/api/ApiChiTietBaoGia/PostKH_LIEN_HE", $scope.arrayBaoGiaChiTiet)
+                    $http.post("http://27.72.144.148:8003/api/ApiChiTietBaoGia/PostKH_LIEN_HE", $scope.arrayBaoGiaChiTiet)
                         .then(function successCallback(response) {
                             SuccessSystem("Lưu thành công!");
                             $scope.createnewPOvalue = true;
@@ -2201,7 +2201,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'POST',
             data: $scope.Bao_Gia,
-            url: window.location.origin + '/api/Api_DonHangPO/PostDon_Hang_PO'
+            url: 'http://27.72.144.148:8003/api/Api_DonHangPO/PostDon_Hang_PO'
         }).then(function successCallback(response) {
             SuccessSystem('Bạn đã tạo thành công 1 đơn PO có mã là ' + response.data);
             $scope.PhuongAnKD = {
@@ -2233,7 +2233,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
             $http({
                 method: 'POST',
                 data: $scope.PhuongAnKD,
-                url: window.location.origin + '/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
+                url: 'http://27.72.144.148:8003/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
             }).then(function successCallback(response) {
                 SuccessSystem('Bạn đã tạo thành công 1 đơn PO có mã là ' + response.data.MA_SO_PAKD);
 
@@ -2248,7 +2248,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
     };
 
     $scope.getdataBaoGia = function (sobaogia) {
-        $http.post(window.location.origin + '/api/Api_BaoGia/PrintBaoGia/' + sobaogia)
+        $http.post('http://27.72.144.148:8003/api/Api_BaoGia/PrintBaoGia/' + sobaogia)
          .then(function (response) {
              if (response.data) {
                  $scope.thongtinbaogia = response.data;
@@ -2399,7 +2399,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'PUT',
             data: $scope.Bao_Gia,
-            url: window.location.origin + '/api/Api_BaoGia/' + $scope.Bao_Gia.SO_BAO_GIA
+            url: 'http://27.72.144.148:8003/api/Api_BaoGia/' + $scope.Bao_Gia.SO_BAO_GIA
         }).then(function successCallback(response) {
             $scope.Bao_Gia = response.data;
 
@@ -2414,7 +2414,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                 $http({
                     method: 'POST',
                     data: $scope.arrayChiTietBaoGia,
-                    url: window.location.origin + '/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
+                    url: 'http://27.72.144.148:8003/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
                 }).then(function successCallback(response) {
                     SuccessSystem("Hoàn Thành Lưu");
                     $(function () {
@@ -2574,7 +2574,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'PUT',
             data: $scope.Bao_Gia_edit,
-            url: window.location.origin + '/api/Api_BaoGia/' + $scope.Bao_Gia_edit.SO_BAO_GIA
+            url: 'http://27.72.144.148:8003/api/Api_BaoGia/' + $scope.Bao_Gia_edit.SO_BAO_GIA
         }).then(function successCallback(response) {
             $scope.Bao_Gia = response.data;
 
@@ -2589,7 +2589,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                 $http({
                     method: 'POST',
                     data: $scope.arrayChiTietBaoGia_Edit,
-                    url: window.location.origin + '/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
+                    url: 'http://27.72.144.148:8003/api/Api_ChiTietBaoGia/PutBH_CT_BAO_GIA'
                 }).then(function successCallback(response) {
                     
                     $scope.arrayChiTietBaoGia = [];
@@ -2633,7 +2633,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                     $http({
                         method: 'POST',
                         data: $scope.Bao_Gia,
-                        url: window.location.origin + '/api/Api_DonHangPO/PostDon_Hang_PO'
+                        url: 'http://27.72.144.148:8003/api/Api_DonHangPO/PostDon_Hang_PO'
                     }).then(function successCallback(response) {
                         SuccessSystem('Bạn đã tạo thành công 1 đơn PO có mã là ' + response.data)
                         $scope.PhuongAnKD = {
@@ -2665,7 +2665,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
                         $http({
                             method: 'POST',
                             data: $scope.PhuongAnKD,
-                            url: window.location.origin + '/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
+                            url: 'http://27.72.144.148:8003/api/Api_PhuongAnKinhDoanh/PostBH_PHUONG_AN_KINH_DOANH'
                         }).then(function successCallback(response) {
                             SuccessSystem('Bạn đã tạo thành công 1 PAKD có mã là ' + response.data.MA_SO_PAKD);
                             $(function () {
@@ -2707,7 +2707,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         }
         window.setInterval(function () {
             // List bao gia kinh doanh
-            $http.post('/api/Api_BaoGia/ListBaoGia/' + sotrang,datas).then(function (response) {
+            $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGia/' + sotrang,datas).then(function (response) {
                 $scope.ds_baogia_kinhdoanh = response.data;
             });
         }, 5000);
@@ -2717,32 +2717,32 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
     //window.setInterval(function (sotrang) {
     //    // List bao gia kinh doanh
-    //    $http.post('/api/Api_BaoGia/ListBaoGia/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGia/' + isadmin + '/' + username).then(function (response) {
     //        $scope.ds_baogia_kinhdoanh = response.data;
     //    });
 
     //    // List bao gia kinh doanh da huy
-    //    $http.post('/api/Api_BaoGia/ListBaoGiaDaHuy/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaDaHuy/' + isadmin + '/' + username).then(function (response) {
     //        $scope.ds_baogia_kinhdoanh_dahuy = response.data;
     //    });
 
     //    // List bao gia kinh doanh that bai
-    //    $http.post('/api/Api_BaoGia/ListBaoGiaThatBai/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaThatBai/' + isadmin + '/' + username).then(function (response) {
     //        $scope.ds_baogia_kinhdoanh_thatbai = response.data;
     //    });
 
     //    // List bao gia kinh doanh dang cho phan hoi
-    //    $http.post('/api/Api_BaoGia/ListBaoGiaDangChoPhanHoi/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaDangChoPhanHoi/' + isadmin + '/' + username).then(function (response) {
     //        $scope.ds_baogia_kinhdoanh_dangchophanhoi = response.data;
     //    });
 
     //    // List bao gia kinh doanh da len PO
-    //    $http.post('/api/Api_BaoGia/ListBaoGiaDaLenPO/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaDaLenPO/' + isadmin + '/' + username).then(function (response) {
     //        $scope.ds_baogia_kinhdoanh_dalenPO = response.data;
     //    });
 
     //    // List bao gia kinh doanh thanh cong
-    //    $http.post('/api/Api_BaoGia/ListBaoGiaThanhCong/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaThanhCong/' + isadmin + '/' + username).then(function (response) {
     //        $scope.ds_baogia_kinhdoanh_thanhcong = response.data;
     //    });
     //}, 5000);
@@ -2764,14 +2764,14 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
             isadmin: isadmin,
             tukhoa: tukhoa
         }
-        $http.post('/api/Api_BaoGia/ListBaoGia/' + pageNumber, datas).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGia/' + pageNumber, datas).then(function (response) {
             $scope.ds_baogia_kinhdoanh = response.data;
         });
     };
     $scope.load_listbaogia(1)
 
     // Phan trang list bao gia
-    $http.post('/api/Api_BaoGia/DemTongSoBaoGia', thamso).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/DemTongSoBaoGia', thamso).then(function (response) {
         $scope.tongsobaogia = response.data;
         pagination2.make(parseInt($scope.tongsobaogia), 15);
     });
@@ -2788,7 +2788,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
         $http({
             method: 'POST',
             data: datas,
-            url: window.location.origin + '/api/Api_BaoGia/ListBaoGia/' + pageNumber
+            url: 'http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGia/' + pageNumber
         }).then(function successCallback(response) {
             $scope.ds_baogia_kinhdoanh = response.data;
         });
@@ -2813,27 +2813,27 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
 
 
     // List bao gia kinh doanh da huy
-    $http.post('/api/Api_BaoGia/ListBaoGiaDaHuy/' + isadmin + '/' + username).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaDaHuy/' + isadmin + '/' + username).then(function (response) {
         $scope.ds_baogia_kinhdoanh_dahuy = response.data;
     });
 
     // List bao gia kinh doanh that bai
-    $http.post('/api/Api_BaoGia/ListBaoGiaThatBai/' + isadmin + '/' + username).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaThatBai/' + isadmin + '/' + username).then(function (response) {
         $scope.ds_baogia_kinhdoanh_thatbai = response.data;
     });
 
     // List bao gia kinh doanh dang cho phan hoi
-    $http.post('/api/Api_BaoGia/ListBaoGiaDangChoPhanHoi/' + isadmin + '/' + username).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaDangChoPhanHoi/' + isadmin + '/' + username).then(function (response) {
         $scope.ds_baogia_kinhdoanh_dangchophanhoi = response.data;
     });
 
     // List bao gia kinh doanh da len PO
-    $http.post('/api/Api_BaoGia/ListBaoGiaDaLenPO/' + isadmin + '/' + username).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaDaLenPO/' + isadmin + '/' + username).then(function (response) {
         $scope.ds_baogia_kinhdoanh_dalenPO = response.data;
     });
 
     // List bao gia kinh doanh thanh cong
-    $http.post('/api/Api_BaoGia/ListBaoGiaThanhCong/' + isadmin + '/' + username).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/ListBaoGiaThanhCong/' + isadmin + '/' + username).then(function (response) {
         $scope.ds_baogia_kinhdoanh_thanhcong = response.data;
     });
 
@@ -2844,7 +2844,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
     $scope.arrayKH_BaoGia = [];
     $scope.showtable_KH_BaoGia = false;
 
-    $http.post(window.location.origin + '/api/Api_BaoGia/KhachHangTheoSale/' + username + '/' + isadmin)
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/KhachHangTheoSale/' + username + '/' + isadmin)
      .then(function (response) {
          if (response.data) {
              $scope.arrayKH_BaoGia = response.data;
@@ -2898,7 +2898,7 @@ app.controller('baogiaCtrl', function ($scope, $http, baogiaService, $timeout) {
             TK_CHI_PHI: 632,
             MA_DO_SALE_TAO : true
         }
-        $http.post('/api/Api_HanghoaHL/PostHH', data_add).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_HanghoaHL/PostHH', data_add).then(function (response) {
             $scope.Detail.ListNew[$scope.index].ma_hang = response.data;
             $scope.Detail.ListNew[$scope.index].ma_chuan = $scope.new_ma_chuan;
             $scope.Detail.ListNew[$scope.index].ten_hang = $scope.new_ten_hang;

@@ -13,7 +13,7 @@
     $scope.showtable_ma_khach_hang = false;
 
     //get data khách hàng
-    $http.get(window.location.origin + '/api/Api_KH')
+    $http.get('http://27.72.144.148:8003/api/Api_KH')
          .then(function (response) {
              if (response.data) {
                  $scope.arrayKH = response.data;

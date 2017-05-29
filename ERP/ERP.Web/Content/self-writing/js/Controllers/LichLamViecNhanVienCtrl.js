@@ -5,7 +5,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
 
     //get data lich lam viec
     $scope.get_datalichlamviec = function (nhanvienthuchien) {
-        $http.get("/api/LichLamViec/GetLichLamViec/" + nhanvienthuchien)
+        $http.get("http://27.72.144.148:8003/api/LichLamViec/GetLichLamViec/" + nhanvienthuchien)
          .then(function (response) {
              if (response.data) {
                  $scope.DataLichLamViec = response.data;
@@ -21,7 +21,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
 
     //Get data_phòng ban
     $scope.get_dataphongban = function (macongty) {
-        $http.get("/api/PhongBan/GetPhongBan/" + macongty)
+        $http.get("http://27.72.144.148:8003/api/PhongBan/GetPhongBan/" + macongty)
          .then(function (response) {
              if (response.data) {
                  $scope.DataPhongBan = response.data;
@@ -45,7 +45,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
             GHI_CHU: $scope.kq.GHI_CHU,
             HUY_CONG_VIEC : $scope.kq.HUY_CONG_VIEC
         }
-        $http.put("/api/Api_TaiKhoanKH/PutLichLamViec/" + id,data_save).then(function (response) {
+        $http.put("http://27.72.144.148:8003/api/Api_TaiKhoanKH/PutLichLamViec/" + id,data_save).then(function (response) {
             alert('Sửa thành công')
             $scope.get_datalichlamviec($scope.kq.NHAN_VIEN_THUC_HIEN);
         }, function (error) {
@@ -54,7 +54,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
     }
 
     $scope.delete_lichlamviec = function (id) {
-        $http.delete('/api/Api_TaiKhoanKH/DeleteLichLamViec/' + id).then(function (response) {
+        $http.delete('http://27.72.144.148:8003/api/Api_TaiKhoanKH/DeleteLichLamViec/' + id).then(function (response) {
             alert('Xóa thành công');
             $scope.get_datalichlamviec($scope.kq.NHAN_VIEN_THUC_HIEN);
         }, function (error) {
@@ -73,7 +73,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
             GHI_CHU: $scope.ghi_chu,
             NHAN_VIEN_THUC_HIEN : salehienthoi,
         }
-        $http.post('/api/Api_TaiKhoanKH/PostLichLamViec', data_add).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_TaiKhoanKH/PostLichLamViec', data_add).then(function (response) {
             alert('Thêm mới thành công');
             window.location.href = "/LichLamViecNhanVien/Index";
         }, function (error) {
@@ -84,7 +84,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
 
     //Get data_nhân viên phòng ban
     $scope.get_datanhanvienphongban = function (maphongban) {
-        $http.get("/api/NhanVien/GetNhanVienPhongBan/" + maphongban)
+        $http.get("http://27.72.144.148:8003/api/NhanVien/GetNhanVienPhongBan/" + maphongban)
          .then(function (response) {
              if (response.data) {
                  $scope.DataNhanVienPhongBan = response.data;
@@ -102,7 +102,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
         $scope.kq = kq;
     };
 
-    $http.get('/api/Api_GiaoViec/GetGiaoViec/' + salehienthoi).then(function (response) {
+    $http.get('http://27.72.144.148:8003/api/Api_GiaoViec/GetGiaoViec/' + salehienthoi).then(function (response) {
         $scope.list_congviec = response.data;
     });
 
@@ -113,9 +113,9 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
             TRANG_THAI: $scope.entry.TRANG_THAI,
             GHI_CHU : $scope.entry.GHI_CHU,
         }
-        $http.put('/api/Api_GiaoViec/PutNV_GIAO_VIEC/' + $scope.entry.ID, data_save).then(function (response) {
+        $http.put('http://27.72.144.148:8003/api/Api_GiaoViec/PutNV_GIAO_VIEC/' + $scope.entry.ID, data_save).then(function (response) {
             alert('Sửa thành công')
-            $http.get('/api/Api_GiaoViec/GetGiaoViec/' + salehienthoi).then(function (response) {
+            $http.get('http://27.72.144.148:8003/api/Api_GiaoViec/GetGiaoViec/' + salehienthoi).then(function (response) {
                 $scope.list_congviec = response.data;
             });
         }, function (error) {
@@ -156,7 +156,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
     $scope.arrayNV = [];
     $scope.showtable_NV = false;
 
-    $http.get(window.location.origin + '/api/Api_NguoidungHL')
+    $http.get('http://27.72.144.148:8003/api/Api_NguoidungHL')
      .then(function (response) {
          if (response.data) {
              $scope.arrayNV = response.data;
@@ -202,7 +202,7 @@ app.controller('LichLamViecNhanVienCtrl', function ($scope, $http) {
             NGUOI_GIAO_VIEC: salehienthoi,
         }
 
-        $http.post('/api/Api_GiaoViec/PostNV_GIAO_VIEC', data).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_GiaoViec/PostNV_GIAO_VIEC', data).then(function (response) {
             SuccessSystem('Thành công');
         });
     };

@@ -16,7 +16,7 @@
 
 
 
-    $http.get('/api/Api_HangCanDatPurchase/GetHangCanDatPurchase/' + isadmin + '/' + username).then(function (response) {
+    $http.get('http://27.72.144.148:8003/api/Api_HangCanDatPurchase/GetHangCanDatPurchase/' + isadmin + '/' + username).then(function (response) {
         $scope.list_hangcandatpurc = response.data;
     });
 
@@ -27,7 +27,7 @@
     $scope.arrayMuaHang = [];
     $scope.showtable_NCC_DatHang = false;
 
-    $http.get(window.location.origin + '/api/Api_HangCanDatPurchase/GetNhaCungCapTheoPurchase/' + isadmin + '/' + username)
+    $http.get('http://27.72.144.148:8003/api/Api_HangCanDatPurchase/GetNhaCungCapTheoPurchase/' + isadmin + '/' + username)
      .then(function (response) {
          if (response.data) {
              $scope.arrayMuaHang = response.data;
@@ -74,7 +74,7 @@
 
     $scope.lienhekh = function (url) {
         //get data liên hệ
-        $http.post(window.location.origin + '/api/Api_LienHeNCC/LocLienHeNCC/' + url)
+        $http.post('http://27.72.144.148:8003/api/Api_LienHeNCC/LocLienHeNCC/' + url)
              .then(function (response) {
                  if (response.data) {
                      $scope.arrayLH = response.data;
@@ -240,7 +240,7 @@
         }
 
         //Lưu vào CSDL
-        $http.post("/api/Api_DonPOMuaHang/ThongTinChungPOMuaHang", $scope.ThongTinChung)
+        $http.post("http://27.72.144.148:8003/api/Api_DonPOMuaHang/ThongTinChungPOMuaHang", $scope.ThongTinChung)
             .then(function successCallback(response) {
                 $scope.ThongTinChung = response.data;
                 if (!$scope.ThongTinChung) {
@@ -255,7 +255,7 @@
 
 
                 if ($scope.arrayChiTiet.length > 0) {
-                    $http.post("/api/Api_DonPOMuaHang/ChiTietPOMuaHang", $scope.arrayChiTiet)
+                    $http.post("http://27.72.144.148:8003/api/Api_DonPOMuaHang/ChiTietPOMuaHang", $scope.arrayChiTiet)
                         .then(function successCallback(response) {
                             SuccessSystem("Thêm thành công!");
                             for (i = 0; i < response.data.length; i++)
@@ -278,14 +278,14 @@
                                 }
                             }
 
-                            $http.post('/api/Api_MH_JOIN_BH/PostMH_JOIN_BH', $scope.Detail.ListGop).then(function (response) {
+                            $http.post('http://27.72.144.148:8003/api/Api_MH_JOIN_BH/PostMH_JOIN_BH', $scope.Detail.ListGop).then(function (response) {
                                 SuccessSystem("Lưu MH_JOIN_BH thành công!");
                             }, function errorCallback(response) {
                                 ErrorSystem("Không lưu được MH_JOIN_BH");
                             });
 
-                            $http.post('/api/Api_ChiTiet_DonHangPO/SuaDatHang', $scope.Detail.ListAdd).then(function (response) {
-                                $http.get('/api/Api_HangCanDatPurchase/GetHangCanDatPurchase/' + isadmin + '/' + username).then(function (response) {
+                            $http.post('http://27.72.144.148:8003/api/Api_ChiTiet_DonHangPO/SuaDatHang', $scope.Detail.ListAdd).then(function (response) {
+                                $http.get('http://27.72.144.148:8003/api/Api_HangCanDatPurchase/GetHangCanDatPurchase/' + isadmin + '/' + username).then(function (response) {
                                     $scope.list_hangcandatpurc = response.data;
                                 });
                             });
@@ -308,7 +308,7 @@
     };
 
 
-    $http.post('/api/Api_DonPOMuaHang/ListPOMuaHang/' + isadmin + '/' + username).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_DonPOMuaHang/ListPOMuaHang/' + isadmin + '/' + username).then(function (response) {
         $scope.list_donPOMUaHang = response.data;
     });
 
@@ -329,7 +329,7 @@
 
     //hàm tìm kiếm
     $scope.getdatadonPO = function () {
-        $http.post(window.location.origin + '/api/Api_DonPOMuaHang/ChiTietPOMuaHang/' + url)
+        $http.post('http://27.72.144.148:8003/api/Api_DonPOMuaHang/ChiTietPOMuaHang/' + url)
          .then(function (response) {
              if (response.data) {
                  $scope.thongtinmuahang = response.data;
@@ -420,11 +420,11 @@
         }
 
         //Lưu vào CSDL
-        $http.post("/api/Api_DonPOMuaHang/EditThongTinChung", $scope.ThongTinChungEdit)
+        $http.post("http://27.72.144.148:8003/api/Api_DonPOMuaHang/EditThongTinChung", $scope.ThongTinChungEdit)
             .then(function successCallback(response) {                                        
                 SuccessSystem("Sửa thông tin chung thành công");
                 if ($scope.arrayChiTietEdit.length > 0) {
-                    $http.post("/api/Api_DonPOMuaHang/EditChiTietPO", $scope.arrayChiTietEdit)
+                    $http.post("http://27.72.144.148:8003/api/Api_DonPOMuaHang/EditChiTietPO", $scope.arrayChiTietEdit)
                         .then(function successCallback(response) {
                             SuccessSystem("Sửa thông tin chi tiết thành công!");
                             $(function () {
@@ -503,14 +503,14 @@
             TONG_TIEN_DA_BAO_GOM_VAT: $scope.thongtinchung.TONG_TIEN_DA_BAO_GOM_VAT
         };
 
-        $http.post('/api/Api_MH_DE_NGHI_NHAP_KHO/PostMH_DE_NGHI_NHAP_KHO', $scope.ThongTinChungDeNghi).then(function successCallback(response) {
+        $http.post('http://27.72.144.148:8003/api/Api_MH_DE_NGHI_NHAP_KHO/PostMH_DE_NGHI_NHAP_KHO', $scope.ThongTinChungDeNghi).then(function successCallback(response) {
             SuccessSystem("Thêm thông tin chung đề nghị nhập kho thành công");
             $scope.ThongTinChungDeNghi = response.data;
             $scope.ThongTinChungDeNghi.MA_SO_DN;
             for (i = 0; i < $scope.Detail.ListDeNghiNhapKho.length; i++) {
                 $scope.Detail.ListDeNghiNhapKho[i].MA_SO_DN = $scope.ThongTinChungDeNghi.MA_SO_DN;
             }
-            $http.post('/api/Api_MH_DE_NGHI_NHAP_KHO/ChiTietDeNghiNhapKho', $scope.Detail.ListDeNghiNhapKho).then(function (response) {
+            $http.post('http://27.72.144.148:8003/api/Api_MH_DE_NGHI_NHAP_KHO/ChiTietDeNghiNhapKho', $scope.Detail.ListDeNghiNhapKho).then(function (response) {
                 SuccessSystem("Thêm chi tiết đề nghị nhập kho thành công");
                 for (i = 0; i < response.data.length; i++)
                 {
@@ -536,7 +536,7 @@
                     }
                    
                 }
-                $http.post('/api/Api_MH_JOIN_DENGHI/PostMH_DE_NGHI_JOIN_PO_MH', $scope.Detail.ListMH_JOIN_DN).then(function (response) {
+                $http.post('http://27.72.144.148:8003/api/Api_MH_JOIN_DENGHI/PostMH_DE_NGHI_JOIN_PO_MH', $scope.Detail.ListMH_JOIN_DN).then(function (response) {
                     $(function () {
                         setTimeout(function () {
                             window.location.href = "/MuaHang/HangCanDat/DonDatHang";

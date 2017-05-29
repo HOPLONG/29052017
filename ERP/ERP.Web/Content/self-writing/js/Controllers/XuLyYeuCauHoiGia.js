@@ -6,7 +6,7 @@
             USERNAME: purhienthoi,
             IS_ADMIN : isadmin
         }
-        return $http.post('/api/Api_XuLyYeuCauHoiGia/GetMH_XL_YEU_CAU_HOI_GIA',data).then(function (response)
+        return $http.post('http://27.72.144.148:8003/api/Api_XuLyYeuCauHoiGia/GetMH_XL_YEU_CAU_HOI_GIA',data).then(function (response)
         {
             $scope.list_xuly_hoihang = response.data;
         });
@@ -21,7 +21,7 @@
     $scope.load_xuly = function (item, idYCHG) {
         $scope.item = item;
         var idYCHG = parseInt(idYCHG);
-        return $http.post('/api/Api_LoadXuLyYeuCauHoiGia/HoiGia/' + idYCHG).then(function (response) {
+        return $http.post('http://27.72.144.148:8003/api/Api_LoadXuLyYeuCauHoiGia/HoiGia/' + idYCHG).then(function (response) {
             $scope.Detail.ListAdd = response.data;
         });
     };
@@ -73,7 +73,7 @@
             $http({
                 method: 'POST',
                 data: $scope.arrayChiTietXuLy,
-                url: window.location.origin + '/api/Api_LoadXuLyYeuCauHoiGia/XuLyHoiHang/' + $scope.item.ID_HOI_GIA
+                url: 'http://27.72.144.148:8003/api/Api_LoadXuLyYeuCauHoiGia/XuLyHoiHang/' + $scope.item.ID_HOI_GIA
             }).then(function successCallback(response) {
                 SuccessSystem("Hoàn Thành Lưu");
                 $scope.xuly_hoihang();

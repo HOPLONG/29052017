@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.NewModels
+namespace ERP.Api.Models.NewModel.Luong_ChamCong
 {
     public class BangChamCong
     {

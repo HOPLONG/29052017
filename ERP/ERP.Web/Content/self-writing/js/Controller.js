@@ -652,7 +652,7 @@ app.controller('chitietbaivietCtrl', function (chitietbaivietService, $scope,$ht
     $scope.checkid();
 
     $scope.load_baiviet = function () {
-        $http.post('/api/Api_BaiViet_TongHop/GetTongHopBaiViet').then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_BaiViet_TongHop/GetTongHopBaiViet').then(function (response) {
             $scope.list_baiviet = response.data;
         });
     };
@@ -1621,7 +1621,7 @@ app.controller('salephutrachCtrl', function (salephutrachService, khachhangServi
     $scope.arraynewLienHe = [];
     $scope.showtable_lienhenew = false;
 
-    $http.get(window.location.origin + '/api/Api_ListLienHeKH')
+    $http.get('http://27.72.144.148:8003/api/Api_ListLienHeKH')
             .then(function (response) {
                 if (response.data) {
                     $scope.arraynewLienHe = response.data;
@@ -1659,7 +1659,7 @@ app.controller('salephutrachCtrl', function (salephutrachService, khachhangServi
     $scope.arraynewStaffs = [];
     $scope.showtable_ho_va_ten_new = false;
 
-    $http.get(window.location.origin + '/api/Api_NhanvienKD')
+    $http.get('http://27.72.144.148:8003/api/Api_NhanvienKD')
             .then(function (response) {
                 if (response.data) {
                     $scope.arraynewStaffs = response.data;
@@ -1843,7 +1843,7 @@ app.controller('DonhangdukienCtrl', function (DonhangdukienService, $scope,$http
 
     $scope.lienhekh = function (url) {
         //get data liên hệ
-        $http.post(window.location.origin + '/api/Api_LienHeKhachHang/' + url)
+        $http.post('http://27.72.144.148:8003/api/Api_LienHeKhachHang/' + url)
              .then(function (response) {
                  if (response.data) {
                      $scope.arrayLH = response.data;

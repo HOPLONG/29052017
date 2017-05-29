@@ -3,7 +3,7 @@
     var macongty = $("#macongty").val();
     window.setInterval(function () {
         //get data khách hàng
-        $http.get(window.location.origin + '/api/Api_BaiViet_TongHop/GetThongBaoKinhDoanh/' + username)
+        $http.get('http://27.72.144.148:8003/api/Api_BaiViet_TongHop/GetThongBaoKinhDoanh/' + username)
              .then(function (response) {
                  if (response.data) {
                      $scope.ListThongBao = response.data;
@@ -17,7 +17,7 @@
     
     //get số thông báo
     $scope.so_thong_bao = function () {
-        $http.get(window.location.origin + '/api/Api_BaiViet_TongHop/GetSoThongBaoKinhDoanh/' + username)
+        $http.get('http://27.72.144.148:8003/api/Api_BaiViet_TongHop/GetSoThongBaoKinhDoanh/' + username)
         .then(function (response) {
             if (response.data) {
                 $scope.sothongbao = response.data;
@@ -32,7 +32,7 @@
 
 
     $scope.ReadNotification = function (id) {
-        $http.put(window.location.origin + '/api/Api_BaiViet_TongHop/ReadNotification/' + id)
+        $http.put('http://27.72.144.148:8003/api/Api_BaiViet_TongHop/ReadNotification/' + id)
         .then(function (response) {
             
         }, function (error) {
@@ -44,7 +44,7 @@
     //$scope.danhsachm = [];
 
     //$scope.dsmarketing = function (makh) {
-    //    $http.get(window.location.origin + '/api/Api_BaiViet_TongHop/GetAllMarketing/' + macongty)
+    //    $http.get(window.location.origin + 'http://27.72.144.148:8003/api/Api_BaiViet_TongHop/GetAllMarketing/' + macongty)
     //    .then(function (response) {
     //        if (response.data) {
     //            $scope.danhsachm = response.data;
