@@ -5,7 +5,9 @@
     function init() {
         //Get List Hàng cần đặt
         $scope.lisHangCanDat = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/GetHangCanDat/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.lisHangCanDat = response.data;
@@ -15,7 +17,9 @@
         });
         //Get List Bán hàng
         $scope.ListBanHang = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/GetListBanHang/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListBanHang = response.data;
@@ -35,7 +39,9 @@
         //});
         //Get List bán hàng chưa xuất
         $scope.ListBanHangChuaXuat = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_DON_BAN_HANG_CHUA_XUAT/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListBanHangChuaXuat = response.data;
@@ -45,7 +51,9 @@
         });
         //Get List bán hàng đã xuất
         $scope.ListBanHangDaXuat = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_DON_BAN_HANG_DA_XUAT/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListBanHangDaXuat = response.data;
@@ -58,7 +66,9 @@
         {
             var username = $('#username').val();
             $scope.ListHangCanXuat = [];
+
             $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_List_HANG_CAN_XUAT/' + IsAdmin + '/' + Username)
+
             .then(function (response) {
                 if (response.data) {
                     $scope.ListHangCanXuat = response.data;
@@ -71,7 +81,9 @@
         //Get List hàng giữ
         var username = $('#username').val();
         $scope.ListHangGiu = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_List_HANG_GIU/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListHangGiu = response.data;
@@ -82,7 +94,9 @@
         //Get List hàng chưa giữ
         var username = $('#username').val();
         $scope.ListHangChuaGiu = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_List_HANG_CHUA_GIU/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListHangChuaGiu = response.data;
@@ -93,7 +107,9 @@
         //Get List hàng giữ chưa bán
         var username = $('#username').val();
         $scope.ListHangGiuChuaBan = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_List_HANG_GIU_CHUA_BAN/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListHangGiuChuaBan = response.data;
@@ -104,7 +120,9 @@
         //Get List hàng giữ đã bán
         var username = $('#username').val();
         $scope.ListHangGiuDaBan = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_List_HANG_GIU_DA_BAN/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListHangGiuDaBan = response.data;
@@ -115,7 +133,9 @@
         //Get List hàng giữ quá ngày giao hàng
         var username = $('#username').val();
         $scope.ListHangGiuQuaNgayGiao = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_List_HANG_GIU_QUA_NGAY_GIAO/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListHangGiuQuaNgayGiao = response.data;
@@ -126,7 +146,9 @@
         //Get List hàng giữ sắp đến ngày xuất
         var username = $('#username').val();
         $scope.ListHangGiuSapDenNgayXuat = [];
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoXuat/Get_List_HANG_GIU_SAP_DEN_NGAY_XUAT/' + IsAdmin + '/' + Username)
+
         .then(function (response) {
             if (response.data) {
                 $scope.ListHangGiuSapDenNgayXuat = response.data;
@@ -169,7 +191,9 @@
             ChiTiet:  $scope.ListChiTiet
         }
         console.log(data);
+
         $http.post('http://27.72.144.148:8003/api/Api_ChuyenKho/ChuyenKhoGiuHang/' + id, data)
+
         .then(function (response) {
             if (response.data) {
                 $scope.GetDataHangCanXuat();
@@ -183,7 +207,9 @@
     };
 
     $scope.candathang = function (id) {
+
         $http.post('http://27.72.144.148:8003/api/Api_KhoXuat/CanDatHang/' + id)
+
         .then(function (response) {
             if (response.data) {
                 $scope.GetDataHangCanXuat();
@@ -207,7 +233,9 @@
             NGAY_XUAT: $scope.item.NGAY_GIAO_HANG,
             NGUOI_GIU: $scope.item.NHAN_VIEN_QUAN_LY,
         }
+
         $http.post('http://27.72.144.148:8003/api/Api_HangCanDat/ThemHangCanDat', data).then(function (response) {
+
             $scope.GetDataHangCanXuat();
         });
     }
@@ -250,7 +278,9 @@
                 tukhoa: tukhoa,
                 ngay: ngay.format('DD/MM/YYYY')
             }
+
             $http.post('http://27.72.144.148:8003/api/Api_KhoXuat/GetListXuatHang/' + IsAdmin + '/' + Username, data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -271,7 +301,9 @@
                 tukhoa: tukhoa,
                 ngay: ngay,
             }
+
             $http.post('http://27.72.144.148:8003/api/Api_KhoXuat/GetListXuatHang/' + IsAdmin + '/' + Username, data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -292,7 +324,9 @@
                 tukhoa: tukhoa,
                 ngay: ngay.format('DD/MM/YYYY')
             }
+
             $http.post('http://27.72.144.148:8003/api/Api_KhoXuat/GetListXuatHang/' + IsAdmin + '/' + Username, data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -313,7 +347,9 @@
                 tukhoa: tukhoa,
                 ngay: ngay
             }
+
             $http.post('http://27.72.144.148:8003/api/Api_KhoXuat/GetListXuatHang/' + IsAdmin + '/' + Username, data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -337,7 +373,9 @@
 
         $http({
             method: 'GET',
+
             url: 'http://27.72.144.148:8003/api/Api_NhapKho/GetDetailKHO_NHAP_KHO/' + item.SO_CHUNG_TU,
+
         }).then(function (response) {
             if (typeof (response.data) == "object") {
                 $scope.Detail.ListAdd = response.data.ctxuatkho;
@@ -371,7 +409,9 @@
             ngay: null,
 
         }
+
         $http.post('http://27.72.144.148:8003/api/Api_KhoXuat/GetListXuatHang/' + IsAdmin + '/' + Username, data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -456,7 +496,9 @@
             TonKho: $scope.MANG_KHO          
         }
 
+
         $http.post("http://27.72.144.148:8003/api/Api_KHO_GIU_HANG/PostKHO_GIU_HANG1", data).then(function (response) {
+
             //console.log(response);
             $scope.datareturn = response.data;
             //response.data = jQuery.parseJSON(response.data);

@@ -14,7 +14,9 @@
     $scope.getdataphieuxuatkho = function (sochungtu) {
         var so_luong = 0;
         var tong_tien = 0;
+
         $http.post('http://27.72.144.148:8003/api/Api_XuatKho/PrintPhieuXuatKho/' + sochungtu)
+
          .then(function (response) {
              if (response.data) {
                  $scope.thongtinbaogia = response.data;

@@ -228,7 +228,9 @@
         /**
         * get tk ngân hàng
         */
+
         $http.get('http://27.72.144.148:8003/api/Api_LoaiTKnganhangnoibo')
+
          .then(function (response) {
              if (response.data) {
                  $scope.arrayBanks = response.data;
@@ -240,7 +242,9 @@
         /**
         * get nhan viên
         */
+
         $http.get('http://27.72.144.148:8003/api/Api_NhanvienHL/GetListNhanvien')
+
              .then(function (response) {
                  if (response.data) {
                      $scope.arrayStaffs = response.data;
@@ -255,7 +259,9 @@
         /**
         * get tài khoản hạch toán
         */
+
         $http.get('http://27.72.144.148:8003/api/Api_TaiKhoanHachToan')
+
          .then(function (response) {
              if (response.data) {
                  $scope.arrayBankHackToan = response.data;
@@ -268,7 +274,9 @@
         *loc dữ liệu khi input thay đổi
         */
         $scope.onDoiTuongFind = function () {
+
             $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.arrayTongHop.ma_doi_tuong)
+
              .then(function (response) {
                  console.log(response);
                  if (response.data) {
@@ -460,7 +468,9 @@
             var b = $('#macongty').val();
             $http({
                 method: 'POST',
+
                 url: 'http://27.72.144.148:8003/api/Api_QUY_PHIEU_THU/PostQUY_PHIEUTHU',
+
                 data: {
                     SO_CHUNG_TU: $scope.arrayTongHop.SoChungTu,
                     NGAY_CHUNG_TU: ngaychungtu,
@@ -539,7 +549,9 @@
                 $("#DataGiaTriChungTu").css({ "display": "none" });
                 $http({
                     method: 'GET',
+
                     url: 'http://27.72.144.148:8003/api/Api_Loaichungtu'
+
                 }).then(function (response) {
                     if (typeof (response.data) == "object") {
                         $scope.GiaTriThamChieu = [];
@@ -563,7 +575,9 @@
                 $("#Input_MaChungTu").css({ "display": "none" });
                 $("#DataGiaTriChungTu").css({ "display": "block" });
                 $scope.DoiTuongFind = function () {
+
                     $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.GiaTriChungTu.Search)
+
                      .then(function (response) {
                          if (typeof (response.data) == "object") {
                              var data = response.data.DoiTuong;
@@ -615,7 +629,9 @@
 
                 }
 
+
                 $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/SearchByTypeWithDate', data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -660,7 +676,9 @@
 
                 }
 
+
                 $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/SearchByDoiTuongWithDate', data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -678,7 +696,9 @@
             }
             else {
                 var mact = $scope.MaChungTu.Search;
+
                 $http.get('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetbyMa/' + mact)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {

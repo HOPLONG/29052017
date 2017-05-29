@@ -43,7 +43,9 @@ app.controller('GiuHangHopLongCtrl', function ($scope, $http) {
     //=====Get data giữ hàng=================
     $scope.GetDataGiuHang= function()
     {
+
         $http.get('http://27.72.144.148:8003/api/Api_KhoGiuHang/GetAllListDataGiuKho/' + macongty)
+
          .then(function (response) {
              if (response.data) {
                  $scope.ListDataGiuKho = response.data;
@@ -58,7 +60,9 @@ app.controller('GiuHangHopLongCtrl', function ($scope, $http) {
     function Init() {
 
         $scope.SearchKH = function (mkh) {
+
             $http.post('http://27.72.144.148:8003/api/Search_KH/Search/' + mkh)
+
              .then(function (response) {
                  if (typeof (response.data) == "object") {
                      $scope.KhachHang.KhachHang = response.data;
@@ -72,7 +76,9 @@ app.controller('GiuHangHopLongCtrl', function ($scope, $http) {
         }
         //Lấy dữ liệu hàng hóa
         $scope.SearchHH = function (mh) {
+
             $http.get('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetAllHH/' + 'HOPLONG/' + 'NHAPKHO/' + mh)
+
              .then(function (response) {
                  if (typeof (response.data) == "object") {
                      $scope.Detail.ListHangHoa = response.data;
@@ -188,7 +194,9 @@ app.controller('GiuHangHopLongCtrl', function ($scope, $http) {
             
         }
 
+
         $http.post("http://27.72.144.148:8003/api/Api_KHO_GIU_HANG/PostKHO_GIU_HANG", data).then(function (response) {
+
             //console.log(response);
             $scope.datareturn = response.data;
             //response.data = jQuery.parseJSON(response.data);

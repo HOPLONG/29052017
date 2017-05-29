@@ -19,6 +19,7 @@
         return service;
 
         function getTaiKhoanNganHang(data, successFunction, errorFunction, ui) {
+
             ajaxService.AjaxGetWithData(data, "http://27.72.144.148:8003/api/Api_LoaiTKnganhangnoibo", successFunction, errorFunction, ui);
         }
 
@@ -33,6 +34,7 @@
         }
         function getDanhSachPhieuChiTienMat(data, successFunction, errorFunction, ui) {
             ajaxService.AjaxGetWithData(data, "http://27.72.144.148:8003/api/Api_QUY_PHIEU_CHI", successFunction, errorFunction, ui);
+
         }
         
     };

@@ -12,7 +12,9 @@
 
     //hàm tìm kiếm
     $scope.getdataBanHang = function (masobh) {
+
         $http.post('/api/Api_BanHang/PrintBanHang/' + masobh)
+
          .then(function (response) {
              if (response.data) {
                  $scope.thongtinbanhang = response.data;

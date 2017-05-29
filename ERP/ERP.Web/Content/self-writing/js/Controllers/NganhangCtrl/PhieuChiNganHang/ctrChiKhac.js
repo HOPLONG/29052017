@@ -205,7 +205,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
         };
 
         // Lấy list tài khoản ngân hàng
+
     $http.get('http://27.72.144.148:8003/api/Api_LoaiTKnganhangnoibo')
+
         .then(function (response) {
             if (response.data) {
                 $scope.listTknh = response.data;
@@ -223,7 +225,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
    
         // List đối tượng
         $scope.onDoiTuongFind = function () {
+
             $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.info.ma_doi_tuong)
+
              .then(function (response) {
                  console.log(response);
                  if (response.data) {
@@ -248,7 +252,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
 
  
     // Lấy list NCC
+
     $http.get('http://27.72.144.148:8003/api/Api_LoaiTKnganhangnoibo')
+
             .then(function (response) {
                 if (response.data) {
                     $scope.listNccTknh = response.data;
@@ -265,7 +271,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     /**
   * get nhan viên
   */
+
     $http.get('http://27.72.144.148:8003/api/Api_NhanvienHL/GetListNhanvien')
+
                 .then(function (response) {
                     if (response.data) {
                         $scope.listStaff = response.data;
@@ -304,7 +312,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     
     // Lấy list TK hạch toán
 
+
     $http.get('http://27.72.144.148:8003/api/Api_TaiKhoanHachToan')
+
            .then(function (response) {
                if (response.data) {
                    $scope.listDmTaiKhoanHachToan = response.data;
@@ -521,7 +531,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
             var b = $('#macongty').val();
             $http({
                 method: 'POST',
+
                 url: 'http://27.72.144.148:8003/api/Api_NH_UNC/PostNH_UNC',
+
                 data: {
                     SO_CHUNG_TU: $scope.info.so_chung_tu,
                     NGAY_CHUNG_TU: ngaychungtu,
@@ -599,7 +611,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
                 $("#DataGiaTriChungTu").css({ "display": "none" });
                 $http({
                     method: 'GET',
+
                     url: 'http://27.72.144.148:8003/api/Api_Loaichungtu'
+
                 }).then(function (response) {
                     if (typeof (response.data) == "object") {
                         $scope.GiaTriThamChieu = [];
@@ -623,7 +637,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
                 $("#Input_MaChungTu").css({ "display": "none" });
                 $("#DataGiaTriChungTu").css({ "display": "block" });
                 $scope.DoiTuongFind = function () {
+
                     $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.GiaTriChungTu.Search)
+
                      .then(function (response) {
                          if (typeof (response.data) == "object") {
                              var data = response.data.DoiTuong;
@@ -676,6 +692,7 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
                 }
 
                 $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/SearchByTypeWithDate', data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -720,7 +737,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
 
                 }
 
+
                 $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/SearchByDoiTuongWithDate', data)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {
@@ -738,7 +757,9 @@ function ctrChiKhac($rootScope, $scope, $location, $http, $uibModal) {
             }
             else {
                 var mact = $scope.MaChungTu.Search;
+
                 $http.get('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetbyMa/' + mact)
+
                 .then(function (response) {
                     console.log(response);
                     if (typeof (response.data) == "object") {

@@ -241,7 +241,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     /**
     * get tk ngân hàng
     */
+
     $http.get('http://27.72.144.148:8003/api/Api_LoaiTKnganhangnoibo')
+
   .then(function (response) {
       if (response.data) {
           $scope.arrayBanks = response.data;
@@ -253,7 +255,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     /**
     * get nhan viên
     */
+
     $http.get('http://27.72.144.148:8003/api/Api_NhanvienHL/GetListNhanvien')
+
       .then(function (response) {
           if (response.data) {
               $scope.arrayStaffs = response.data;
@@ -269,7 +273,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     /**
     * get tài khoản hạch toán
     */
+
     $http.get('http://27.72.144.148:8003/api/Api_TaiKhoanHachToan')
+
     .then(function (response) {
         if (response.data) {
             $scope.arrayBankHackToan = response.data;
@@ -301,7 +307,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     *loc dữ liệu khi input thay đổi
     */
     $scope.onDoiTuongFind = function () {
+
         $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.arrayTongHop.ma_doi_tuong)
+
          .then(function (response) {
              console.log('33333333333333333333333333333', response);
              if (response.data) {
@@ -535,7 +543,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
         
         $http({
             method: 'POST',
+
             url: 'http://27.72.144.148:8003/api/API_QUY_PHIEU_CHI/PostQUY_PHIEUCHI',
+
             data: {
                 SO_CHUNG_TU: $scope.arrayTongHop.SoChungTu,
                 NGAY_CHUNG_TU: ngaychungtu,
@@ -577,7 +587,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     }
 
     $scope.onHuy = function () {
+
         window.location.href = window.location.origin + 'http://27.72.144.148:8003/PhieuChiTienMat/' + $scope.reasonmoney;
+
     }
 
 
@@ -617,7 +629,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
             $("#DataGiaTriChungTu").css({ "display": "none" });
             $http({
                 method: 'GET',
+
                 url: 'http://27.72.144.148:8003/api/Api_Loaichungtu'
+
             }).then(function (response) {
                 if (typeof (response.data) == "object") {
                     $scope.GiaTriThamChieu = [];
@@ -641,7 +655,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
             $("#Input_MaChungTu").css({ "display": "none" });
             $("#DataGiaTriChungTu").css({ "display": "block" });
             $scope.DoiTuongFind = function () {
+
                 $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.GiaTriChungTu.Search)
+
                  .then(function (response) {
                      if (typeof (response.data) == "object") {
                          var data = response.data.DoiTuong;
@@ -693,7 +709,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
 
             }
 
+
             $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/SearchByTypeWithDate', data)
+
             .then(function (response) {
                 console.log(response);
                 if (typeof (response.data) == "object") {
@@ -739,6 +757,7 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
             }
 
             $http.post('http://27.72.144.148:8003/api/Api_XuatNhapKho/SearchByDoiTuongWithDate', data)
+
             .then(function (response) {
                 console.log(response);
                 if (typeof (response.data) == "object") {
@@ -756,7 +775,9 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
         }
         else {
             var mact = $scope.MaChungTu.Search;
+
             $http.get('http://27.72.144.148:8003/api/Api_XuatNhapKho/GetbyMa/' + mact)
+
             .then(function (response) {
                 console.log(response);
                 if (typeof (response.data) == "object") {
