@@ -8,13 +8,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using ERP.Web.Models.NewModels.NganHang;
-using ERP.Web.Common;
 using System.Text.RegularExpressions;
-using ERP.Web.Models.NewModels.All;
-using ERP.Web.Models.NewModels.XuatKho;
 using System.Dynamic;
 using ERP.Api.Models;
+using ERP.Api.Models.ModelAll;
+using ERP.Api.Models.NewModel.NganHang;
 
 namespace ERP.Api.Controllers.NganHang
 {

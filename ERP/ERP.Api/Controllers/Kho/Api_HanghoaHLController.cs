@@ -12,8 +12,8 @@ using System.Dynamic;
 using System.Web.Routing;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using ERP.Web.Models.NewModels.All;
 using ERP.Api.Models;
+using ERP.Api.Models.ModelAll;
 
 namespace ERP.Api.Controllers.Kho
 {

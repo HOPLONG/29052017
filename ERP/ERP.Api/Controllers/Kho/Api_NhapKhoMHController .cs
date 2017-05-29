@@ -8,12 +8,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using ERP.Web.Models.Database;
-using ERP.Web.Models.NewModels.NhapKho;
-using ERP.Web.Common;
-using ERP.Web.Models.NewModels.All;
 using System.Data.SqlClient;
-using ERP.Web.Models.NewModels.XuatKho;
+using ERP.Api.Models;
+using ERP.Api.Models.ModelAll;
+using ERP.Api.Models.NewModel.NhapKho;
+using ERP.Api.Models.NewModel.NhapKhoMH;
 
 namespace ERP.Web.Api.Kho
 {

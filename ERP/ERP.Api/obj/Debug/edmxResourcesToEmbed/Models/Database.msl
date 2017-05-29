@@ -786,6 +786,7 @@
     <EntitySetMapping Name="KH_LIEN_HE">
       <EntityTypeMapping TypeName="ERP_DATABASEModel.KH_LIEN_HE">
         <MappingFragment StoreEntitySet="KH_LIEN_HE">
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
           <ScalarProperty Name="ID_LIEN_HE" ColumnName="ID_LIEN_HE" />
           <ScalarProperty Name="MA_KHACH_HANG" ColumnName="MA_KHACH_HANG" />
           <ScalarProperty Name="NGUOI_LIEN_HE" ColumnName="NGUOI_LIEN_HE" />

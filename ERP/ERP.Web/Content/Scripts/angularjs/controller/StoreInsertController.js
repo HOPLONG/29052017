@@ -174,7 +174,7 @@ app.controller('StoreInsertController', function ($rootScope, $scope, $http, con
 
     //Lấy dữ liệu hàng hóa
     $scope.SearchHH = function (mh) {
-        $http.get(window.location.origin + '/api/Api_XuatNhapKho/GetAllHH/' + 'HOPLONG/' + 'NHAPKHO/' + mh)
+        $http.get('27.72.144.148:8003/api/Api_XuatNhapKho/GetAllHH/' + 'HOPLONG/' + 'NHAPKHO/' + mh)
          .then(function (response) {
              if (typeof (response.data) == "object") {
                  $scope.Detail.ListHangHoa = response.data;
@@ -191,7 +191,7 @@ app.controller('StoreInsertController', function ($rootScope, $scope, $http, con
     function Init() {
 
         $scope.SearchKH = function (mkh) {
-            $http.post(window.location.origin + '/api/Search_KH/Search/' + mkh)
+            $http.post('27.72.144.148:8003/api/Search_KH/Search/' + mkh)
              .then(function (response) {
                  if (typeof (response.data) == "object") {
                      $scope.KhachHang.KhachHang = response.data;
@@ -673,7 +673,7 @@ app.controller('StoreInsertController', function ($rootScope, $scope, $http, con
             $("#Input_MaChungTu").css({ "display": "none" });
             $("#DataGiaTriChungTu").css({ "display": "block" });
             $scope.DoiTuongFind = function () {
-                $http.post(window.location.origin + '/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.GiaTriChungTu.Search)
+                $http.post('27.72.144.148:8003/api/Api_XuatNhapKho/GetAllDoiTuong/' + $scope.GiaTriChungTu.Search)
                  .then(function (response) {
                      if (typeof (response.data) == "object") {
                          var data = response.data.DoiTuong;

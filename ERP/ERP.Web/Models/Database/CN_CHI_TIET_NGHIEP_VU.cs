@@ -26,9 +26,9 @@ namespace ERP.Web.Models.Database
         public string ID_NGHIEP_VU { get; set; }
         public string MO_TA { get; set; }
     
+        public virtual CN_NGHIEP_VU CN_NGHIEP_VU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CN_CHI_TIET_NHOM_NGHIEP_VU> CN_CHI_TIET_NHOM_NGHIEP_VU { get; set; }
-        public virtual CN_NGHIEP_VU CN_NGHIEP_VU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CN_NGHIEP_VU_NHAN_VIEN> CN_NGHIEP_VU_NHAN_VIEN { get; set; }
     }

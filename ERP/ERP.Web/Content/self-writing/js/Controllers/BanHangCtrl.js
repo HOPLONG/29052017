@@ -237,7 +237,7 @@
     //    });;
     //};
     //$scope.load_thongtinchung_banhang();
-    //$http.get(window.location.origin + '/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi)
+    //$http.get('27.72.144.148:8003/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi)
 
     //    .then(function (response) {
     //        $scope.list_khachhang = response.data;

@@ -18,11 +18,11 @@ namespace ERP.Web.Models.Database
         public NCC()
         {
             this.MH_DE_NGHI_NHAP_KHO = new HashSet<MH_DE_NGHI_NHAP_KHO>();
-            this.MH_PO_MUA_HANG = new HashSet<MH_PO_MUA_HANG>();
             this.MH_XL_YEU_CAU_HOI_GIA = new HashSet<MH_XL_YEU_CAU_HOI_GIA>();
             this.NCC_LIEN_HE = new HashSet<NCC_LIEN_HE>();
             this.NCC_LOAI_HANG_CUNG_CAP = new HashSet<NCC_LOAI_HANG_CUNG_CAP>();
             this.NCC_TK_NGAN_HANG = new HashSet<NCC_TK_NGAN_HANG>();
+            this.MH_PO_MUA_HANG = new HashSet<MH_PO_MUA_HANG>();
             this.QUY_CT_PHIEU_CHI = new HashSet<QUY_CT_PHIEU_CHI>();
         }
     
@@ -48,8 +48,6 @@ namespace ERP.Web.Models.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MH_DE_NGHI_NHAP_KHO> MH_DE_NGHI_NHAP_KHO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MH_PO_MUA_HANG> MH_PO_MUA_HANG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MH_XL_YEU_CAU_HOI_GIA> MH_XL_YEU_CAU_HOI_GIA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NCC_LIEN_HE> NCC_LIEN_HE { get; set; }
@@ -58,6 +56,8 @@ namespace ERP.Web.Models.Database
         public virtual NCC_LOAI NCC_LOAI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NCC_TK_NGAN_HANG> NCC_TK_NGAN_HANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MH_PO_MUA_HANG> MH_PO_MUA_HANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QUY_CT_PHIEU_CHI> QUY_CT_PHIEU_CHI { get; set; }
     }

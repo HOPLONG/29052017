@@ -758,6 +758,7 @@
     <Property Name="SDT1" Type="varchar" MaxLength="64" Nullable="false" />
     <Property Name="SDT2" Type="varchar" MaxLength="64" />
     <Property Name="TINH_TRANG_LAM_VIEC" Type="nvarchar" MaxLength="64" />
+    <Property Name="NGAY_TAO" Type="date" />
   </EntityType>
   <EntityType Name="KH_LOAI">
     <Key>

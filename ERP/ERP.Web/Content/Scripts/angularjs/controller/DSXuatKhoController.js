@@ -132,7 +132,7 @@
     //$scope.SearchPhieuXuatKho();
     //Lấy dữ liệu hàng hóa
     $scope.SearchHH = function (mh) {
-        $http.get(window.location.origin + '/api/Api_XuatNhapKho/GetAllHH/' + 'HOPLONG/' + 'NHAPKHO/' + mh)
+        $http.get('27.72.144.148:8003/api/Api_XuatNhapKho/GetAllHH/' + 'HOPLONG/' + 'NHAPKHO/' + mh)
          .then(function (response) {
              if (typeof (response.data) == "object") {
                  $scope.Detail.ListHangHoa = response.data;

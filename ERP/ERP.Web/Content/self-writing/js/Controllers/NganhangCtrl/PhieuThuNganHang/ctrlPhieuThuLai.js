@@ -537,7 +537,7 @@ function ctrlPhieuThuThuLai($rootScope, $scope, $location, $http, $uibModal) {
     //$http({
     //    method: 'POST',
     //    data: $scope.NH_NTTK,
-    //    url: window.location.origin + '/api/Api_NH_NTTK'
+    //    url: '27.72.144.148:8003/api/Api_NH_NTTK'
     //}).then(function successCallback(response) {
     //    $scope.NH_NTTK = response.data;
     //    if (!$scope.NH_NTTK) {
@@ -558,13 +558,13 @@ function ctrlPhieuThuThuLai($rootScope, $scope, $location, $http, $uibModal) {
     //        $http({
     //            method: 'POST',
     //            data: $scope.NH_CT_NTTKs,
-    //            url: window.location.origin + '/api/Api_NH_CT_NTTK/Multi'
+    //            url: '27.72.144.148:8003/api/Api_NH_CT_NTTK/Multi'
     //        }).then(function successCallback(response1) {
     //            if ($scope.THAM_CHIEU.length > 0) {
     //                $http({
     //                    method: 'POST',
     //                    data: $scope.THAM_CHIEU,
-    //                    url: window.location.origin + '/api/Api_XL_THAM_CHIEU_CHUNG_TU/Multi'
+    //                    url: '27.72.144.148:8003/api/Api_XL_THAM_CHIEU_CHUNG_TU/Multi'
     //                }).then(function successCallback(response) {
     //                    alert("Hoàn Thành Lưu");
     //                }, function errorCallback(response) {
@@ -583,7 +583,7 @@ function ctrlPhieuThuThuLai($rootScope, $scope, $location, $http, $uibModal) {
     //        $http({
     //            method: 'POST',
     //            data: $scope.THAM_CHIEU,
-    //            url: window.location.origin + '/api/Api_XL_THAM_CHIEU_CHUNG_TU/Multi'
+    //            url: '27.72.144.148:8003/api/Api_XL_THAM_CHIEU_CHUNG_TU/Multi'
     //        }).then(function successCallback(response) {
     //            alert("Hoàn Thành Lưu");
     //        }, function errorCallback(response) {

@@ -29,7 +29,7 @@
         });
         ////Get List Xuất hàng
         //$scope.ListXuatHang = [];
-        //$http.post(window.location.origin + '/api/Api_KhoXuat/GetListXuatHang/' + IsAdmin + '/' + Username)
+        //$http.post('27.72.144.148:8003/api/Api_KhoXuat/GetListXuatHang/' + IsAdmin + '/' + Username)
         //.then(function (response) {
         //    if (response.data) {
         //        $scope.ListXuatHang = response.data;

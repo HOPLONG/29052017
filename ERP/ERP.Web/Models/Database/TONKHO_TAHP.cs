@@ -18,7 +18,7 @@ namespace ERP.Web.Models.Database
         public string MA_KHO_CON { get; set; }
         public int SL_TAHP { get; set; }
     
-        public virtual DM_KHO DM_KHO { get; set; }
         public virtual HH HH { get; set; }
+        public virtual DM_KHO DM_KHO { get; set; }
     }
 }

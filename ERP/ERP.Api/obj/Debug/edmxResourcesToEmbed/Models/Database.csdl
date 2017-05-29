@@ -1112,6 +1112,7 @@
     <NavigationProperty Name="BH_DON_HANG_DU_KIEN" Relationship="Self.FK__BH_DON_HA__ID_LI__4B180DA3" FromRole="KH_LIEN_HE" ToRole="BH_DON_HANG_DU_KIEN" />
     <NavigationProperty Name="KH" Relationship="Self.FK__DM_LIEN_H__MA_KH__7B264821" FromRole="KH_LIEN_HE" ToRole="KH" />
     <NavigationProperty Name="KH_SALES_PHU_TRACH" Relationship="Self.FK__KH_SALES___ID_LI__689D8392" FromRole="KH_LIEN_HE" ToRole="KH_SALES_PHU_TRACH" />
+    <Property Name="NGAY_TAO" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="KH_LOAI">
     <Key>

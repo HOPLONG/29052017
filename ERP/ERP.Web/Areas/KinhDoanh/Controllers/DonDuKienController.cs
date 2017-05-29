@@ -19,23 +19,23 @@ namespace ERP.Web.Areas.KinhDoanh.Controllers
         // GET: KinhDoanh/DonDuKien
         public ActionResult Index()
         {
-            var bH_DON_HANG_DU_KIEN = db.BH_DON_HANG_DU_KIEN.Include(b => b.KH).Include(b => b.CCTC_NHAN_VIEN).Include(b => b.CCTC_CONG_TY);
-            return View(bH_DON_HANG_DU_KIEN.ToList());
+            //var bH_DON_HANG_DU_KIEN = db.BH_DON_HANG_DU_KIEN.Include(b => b.KH).Include(b => b.CCTC_NHAN_VIEN).Include(b => b.CCTC_CONG_TY);
+            return View();
         }
 
         // GET: KinhDoanh/DonDuKien/Details/5
         public ActionResult Details(string id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            BH_DON_HANG_DU_KIEN bH_DON_HANG_DU_KIEN = db.BH_DON_HANG_DU_KIEN.Find(id);
-            if (bH_DON_HANG_DU_KIEN == null)
-            {
-                return HttpNotFound();
-            }
-            return View(bH_DON_HANG_DU_KIEN);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //BH_DON_HANG_DU_KIEN bH_DON_HANG_DU_KIEN = db.BH_DON_HANG_DU_KIEN.Find(id);
+            //if (bH_DON_HANG_DU_KIEN == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            return View();
         }
 
         // GET: KinhDoanh/DonDuKien/Create

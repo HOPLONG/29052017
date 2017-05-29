@@ -28,5 +28,6 @@ namespace ERP.Web.Models.Database
         public string SDT1 { get; set; }
         public string SDT2 { get; set; }
         public string TINH_TRANG_LAM_VIEC { get; set; }
+        public Nullable<System.DateTime> NGAY_TAO { get; set; }
     }
 }
