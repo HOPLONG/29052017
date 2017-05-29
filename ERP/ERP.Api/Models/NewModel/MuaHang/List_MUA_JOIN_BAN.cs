@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.NewModels.MuaHang
+namespace ERP.Api.Models.NewModel.MuaHang
 {
     public class List_MUA_JOIN_BAN
     {

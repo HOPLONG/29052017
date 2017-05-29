@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.BusinessModel
+namespace ERP.Api.Models.NewModel.Posts
 {
     public class post_categories
     {

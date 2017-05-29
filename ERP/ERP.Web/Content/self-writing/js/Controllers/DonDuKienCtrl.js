@@ -42,7 +42,7 @@ app.controller('DonDuKienCtrl', function ($scope, $http) {
     $scope.showtable_ma_khach_hang = false;
 
     //get data khách hàng
-    $http.get(window.location.origin + '/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi)
+    $http.get('http://27.72.144.148:8003/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi)
          .then(function (response) {
              if (response.data) {
                  $scope.arrayKH = response.data;
@@ -100,7 +100,7 @@ app.controller('DonDuKienCtrl', function ($scope, $http) {
     $scope.GetLHKH = function(ma_khach)
     {
         //get data liên hệ
-        $http.get(window.location.origin + '/api/Api_LienHeKhachHang/' + ma_khach)
+        $http.get('http://27.72.144.148:8003/api/Api_LienHeKhachHang/' + ma_khach)
              .then(function (response) {
                  if (response.data) {
                      $scope.arrayLH = response.data;
@@ -169,7 +169,7 @@ app.controller('DonDuKienCtrl', function ($scope, $http) {
             THAT_BAI: $scope.item.THAT_BAI,
             LY_DO_THAT_BAI: $scope.item.LY_DO_THAT_BAI,
         }
-        $http.put("/api/Api_BaoGia_DonHangDuKien/PutBH_DON_HANG_DU_KIEN/" + $scope.item.MA_DU_KIEN, data_save).then(function (response) {
+        $http.put("http://27.72.144.148:8003/api/Api_BaoGia_DonHangDuKien/PutBH_DON_HANG_DU_KIEN/" + $scope.item.MA_DU_KIEN, data_save).then(function (response) {
             SuccessSystem('Sửa thành công');
             $scope.getDanhSachDuKien();
         });

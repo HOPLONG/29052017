@@ -59,7 +59,7 @@
             da_duyet: $scope.item.da_duyet,
             dang_duyet : $scope.item.dang_duyet,
         }
-        $http.post('/api/Api_DonHangPO/LocDuLieuPO', locdulieu).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/LocDuLieuPO', locdulieu).then(function (response) {
             $scope.list_donhangPO = response.data;
         });
     };
@@ -214,7 +214,7 @@
                 $http({
                     method: 'PUT',
                     data: $scope.arrayChiTietPO,
-                    url: window.location.origin + '/api/Api_ChiTiet_DonHangPO/PutBH_CT_DON_HANG_PO'
+                    url: 'http://27.72.144.148:8003/api/Api_ChiTiet_DonHangPO/PutBH_CT_DON_HANG_PO'
                 }).then(function successCallback(response) {
                     SuccessSystem("Hoàn Thành Lưu");
                 }, function errorCallback(response) {
@@ -257,7 +257,7 @@
             LY_DO_HUY: $scope.ly_do_huy,
             DANG_DUYET : false,
         }
-        $http.put('/api/Api_DonHangPO/Duyet_don_hangPO/' + url, data_duyet).then(function (response) {
+        $http.put('http://27.72.144.148:8003/api/Api_DonHangPO/Duyet_don_hangPO/' + url, data_duyet).then(function (response) {
             SuccessSystem('Duyệt thành công đơn hàng PO có mã là ' + response.data)
             $(function () {
                 setTimeout(function () {
@@ -366,7 +366,7 @@
         $http({
             method: 'POST',
             data: $scope.ThongTinBanHang,
-            url: window.location.origin + '/api/Api_BanHang/PostThemPhieuBanHang'
+            url: 'http://27.72.144.148:8003/api/Api_BanHang/PostThemPhieuBanHang'
         }).then(function successCallback(response) {
             SuccessSystem('Bạn đã tạo thành công 1 đơn bán hàng có mã là ' + response.data);
             $(function () {
@@ -381,7 +381,7 @@
         });
     };
 
-    $http.get(window.location.origin + '/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi + '/' + isadmin)
+    $http.get('http://27.72.144.148:8003/api/Api_KH/GET_KHACH_CUA_SALE/' + salehienthoi + '/' + isadmin)
 
          .then(function (response) {
              $scope.list_khachhang = response.data;
@@ -390,14 +390,14 @@
          });
 
     //get data nguoi giu
-    $http.get(window.location.origin + '/api/Api_KH/GetAllSale')
+    $http.get('http://27.72.144.148:8003/api/Api_KH/GetAllSale')
          .then(function (response) {
              $scope.list_nhanvienql = response.data;
          }, function (error) {
              ErrorSystem(error);
          });
 
-    $http.post('/api/Api_DonHangPO/ListPO_Duyet/' + username + '/' + isadmin).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_Duyet/' + username + '/' + isadmin).then(function (response) {
         $scope.list_POcanduyet = response.data;
     });
 
@@ -407,7 +407,7 @@
             DA_DUYET: false,
             DA_HUY : false,
         }
-        $http.put('/api/Api_DonHangPO/TrangThaiPO/' + masoPO, data_change).then(function (response) {
+        $http.put('http://27.72.144.148:8003/api/Api_DonHangPO/TrangThaiPO/' + masoPO, data_change).then(function (response) {
             return response.data;
         });
     }
@@ -496,7 +496,7 @@
     }
 
     // Phan trang list don hang PO
-    $http.post('/api/Api_DonHangPO/DemTongSoDonPO', thamso).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/DemTongSoDonPO', thamso).then(function (response) {
         $scope.tongsodonPO = response.data;
         pagination2.make(parseInt($scope.tongsodonPO), 15);
     });
@@ -513,7 +513,7 @@
         $http({
             method: 'POST',
             data: datas,
-            url: window.location.origin + '/api/Api_DonHangPO/ListPO/' + pageNumber
+            url: 'http://27.72.144.148:8003/api/Api_DonHangPO/ListPO/' + pageNumber
         }).then(function successCallback(response) {
             $scope.list_PO = response.data;
         });
@@ -540,7 +540,7 @@
         }
         window.setInterval(function () {
             // List bao gia kinh doanh
-            $http.post('/api/Api_DonHangPO/ListPO/' + pageNumber, datas).then(function (response) {
+            $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO/' + pageNumber, datas).then(function (response) {
                 $scope.list_PO = response.data;
             });
         }, 5000);
@@ -548,47 +548,47 @@
     
     //window.setInterval(function () {
     //    // List PO
-    //    $http.post('/api/Api_DonHangPO/ListPO/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO = response.data;
     //    });
 
     //    // List PO da duyet
-    //    $http.post('/api/Api_DonHangPO/ListPO_DaDuyet/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DaDuyet/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_DaDuyet = response.data;
     //    });
 
     //    // List PO da huy
-    //    $http.post('/api/Api_DonHangPO/ListPO_DaHuy/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DaHuy/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_DaHuy = response.data;
     //    });
 
     //    // List PO dang cho duyet
-    //    $http.post('/api/Api_DonHangPO/ListPO_DangChoDuyet/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DangChoDuyet/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_DangChoDuyet = response.data;
     //    });
 
     //    // List PO dang  duyet
-    //    $http.post('/api/Api_DonHangPO/ListPO_DangDuyet/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DangDuyet/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_DangDuyet = response.data;
     //    });
 
     //    // List PO da len don ban hang
-    //    $http.post('/api/Api_DonHangPO/ListPO_DaLenDonBanHang/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DaLenDonBanHang/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_DaLenDonBanHang = response.data;
     //    });
 
     //    // List PO can ban ngay
-    //    $http.post('/api/Api_DonHangPO/ListPO_CanBanNgay/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_CanBanNgay/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_CanBanNgay = response.data;
     //    });
 
     //    // List PO dang xuat do
-    //    $http.post('/api/Api_DonHangPO/ListPO_DangXuatDo/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DangXuatDo/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_DangXuatDo = response.data;
     //    });
 
     //    // List PO chua len don ban
-    //    $http.post('/api/Api_DonHangPO/ListPO_ChuaLenDonBan/' + isadmin + '/' + username).then(function (response) {
+    //    $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_ChuaLenDonBan/' + isadmin + '/' + username).then(function (response) {
     //        $scope.list_PO_ChuaLenDonBan = response.data;
     //    });
     //}, 5000);
@@ -605,58 +605,58 @@
         }
 
         // List PO
-        $http.post('/api/Api_DonHangPO/ListPO/' + pageNumber,datas).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO/' + pageNumber,datas).then(function (response) {
             $scope.list_PO = response.data;
         });
 
 
         // List PO da duyet
-        $http.post('/api/Api_DonHangPO/ListPO_DaDuyet/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DaDuyet/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DaDuyet = response.data;
         });
 
         // List PO da huy
-        $http.post('/api/Api_DonHangPO/ListPO_DaHuy/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DaHuy/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DaHuy = response.data;
         });
 
         // List PO dang cho duyet
-        $http.post('/api/Api_DonHangPO/ListPO_DangChoDuyet/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DangChoDuyet/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DangChoDuyet = response.data;
         });
 
         // List PO dang  duyet
-        $http.post('/api/Api_DonHangPO/ListPO_DangDuyet/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DangDuyet/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DangDuyet = response.data;
         });
 
         // List PO da len don ban hang
-        $http.post('/api/Api_DonHangPO/ListPO_DaLenDonBanHang/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DaLenDonBanHang/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DaLenDonBanHang = response.data;
         });
 
         // List PO can ban ngay
-        $http.post('/api/Api_DonHangPO/ListPO_CanBanNgay/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_CanBanNgay/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_CanBanNgay = response.data;
         });
 
         // List PO dang xuat do
-        $http.post('/api/Api_DonHangPO/ListPO_DangXuatDo/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DangXuatDo/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DangXuatDo = response.data;
         });
 
         // List PO chua len don ban
-        $http.post('/api/Api_DonHangPO/ListPO_ChuaLenDonBan/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_ChuaLenDonBan/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_ChuaLenDonBan = response.data;
         });
 
         // List PO da giu day du
-        $http.post('/api/Api_DonHangPO/ListPO_DaGiuDayDu/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DaGiuDayDu/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DaGiuDayDu = response.data;
         });
 
         // List PO dang giu do
-        $http.post('/api/Api_DonHangPO/ListPO_DangGiuDo/' + isadmin + '/' + username).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DonHangPO/ListPO_DangGiuDo/' + isadmin + '/' + username).then(function (response) {
             $scope.list_PO_DangGiuDo = response.data;
         });
     };
@@ -675,7 +675,7 @@
             DA_DUYET: false,
             DA_HUY: false,
         }
-        $http.put('/api/Api_DonHangPO/TrangThaiPO/' + masoPO, data_change).then(function (response) {
+        $http.put('http://27.72.144.148:8003/api/Api_DonHangPO/TrangThaiPO/' + masoPO, data_change).then(function (response) {
             return response.data;
         });
     }
@@ -705,7 +705,7 @@
     $scope.arrayKH_BaoGia = [];
     $scope.showtable_KH_BaoGia = false;
 
-    $http.post(window.location.origin + '/api/Api_BaoGia/KhachHangTheoSale/' + username + '/' + isadmin)
+    $http.post('http://27.72.144.148:8003/api/Api_BaoGia/KhachHangTheoSale/' + username + '/' + isadmin)
      .then(function (response) {
          if (response.data) {
              $scope.arrayKH_BaoGia = response.data;
@@ -752,7 +752,7 @@
 
     $scope.lienhekh = function (url) {
         //get data liên hệ
-        $http.post(window.location.origin + '/api/Api_LienHeKhachHang/' + url)
+        $http.post('http://27.72.144.148:8003/api/Api_LienHeKhachHang/' + url)
              .then(function (response) {
                  if (response.data) {
                      $scope.arrayLH = response.data;
@@ -803,7 +803,7 @@
     var inputChangedPromise;
     //hàm tìm kiếm
     $scope.onHHFind = function (mh) {
-        $http.get(window.location.origin + '/api/Api_HanghoaHL/GetAllHHBaoGia/' + mh)
+        $http.get('http://27.72.144.148:8003/api/Api_HanghoaHL/GetAllHHBaoGia/' + mh)
          .then(function (response) {
              if (response.data) {
                  $scope.arrayHH = response.data;
@@ -961,7 +961,7 @@
             $http({
                 method: 'POST',
                 data: $scope.Bao_Gia,
-                url: window.location.origin + '/api/Api_DonHangPO/ThemPOTuKinhDoanh'
+                url: 'http://27.72.144.148:8003/api/Api_DonHangPO/ThemPOTuKinhDoanh'
             }).then(function successCallback(response) {
                 SuccessSystem('Bạn đã tạo thành công 1 đơn PO có mã là ' + response.data);
                 $(function () {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.SessionState;
 
-namespace ERP.Api.ModelAll
+namespace ERP.Api.Models.ModelAll
 {
     public static class SessionPersister
     {

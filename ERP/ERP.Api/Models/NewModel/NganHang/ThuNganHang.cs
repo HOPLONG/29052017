@@ -1,11 +1,10 @@
-﻿using ERP.Web.Models.NewModels.All;
-using ERP.Web.Models.NewModels.XuatKho;
+﻿using ERP.Api.Models.ModelAll;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.NewModels.NganHang
+namespace ERP.Api.Models.NewModel.NganHang
 {
     public class ThuNganHang
     {

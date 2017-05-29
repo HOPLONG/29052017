@@ -2,7 +2,7 @@
     var username = $('#username').val();
     var isadmin = $('#isadmin').val();
 
-    $http.post('/api/Api_MarketingGiaoViec/ListNhanVienHL').then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_MarketingGiaoViec/ListNhanVienHL').then(function (response) {
         $scope.list_nhanvienHL = response.data;
     });
 
@@ -39,7 +39,7 @@
             MUC_TIEU_CONG_VIEC: muctieunhanvien,
         }
 
-        $http.post('/api/Api_MarketingGiaoViec/PostHT_THONG_BAO_MARKETING', data_add).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_MarketingGiaoViec/PostHT_THONG_BAO_MARKETING', data_add).then(function (response) {
             SuccessSystem("Thành công");
             $(function () {
                 setTimeout(function () {

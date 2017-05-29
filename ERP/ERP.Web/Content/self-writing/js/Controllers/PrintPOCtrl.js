@@ -12,7 +12,7 @@
 
     //hàm tìm kiếm
     $scope.getdatadonPO = function (masoPO) {
-        $http.post(window.location.origin + '/api/Api_DonHangPO/PrintDonPO/' + masoPO)
+        $http.post(window.location.origin + 'http://27.72.144.148:8003/api/Api_DonHangPO/PrintDonPO/' + masoPO)
          .then(function (response) {
              if (response.data) {
                  $scope.thongtinbaogia = response.data;

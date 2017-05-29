@@ -82,7 +82,7 @@
     $scope.load_nhanvienkd();
 
     $scope.load_nhanvienkho = function () {
-        $http.get('/api/Api_NhanvienKD/GetNhanvienKho').then(function (response) {
+        $http.get('http://27.72.144.148:8003/api/Api_NhanvienKD/GetNhanvienKho').then(function (response) {
             $scope.list_nhanvienkho = response.data;
         });
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.NewModels.All
+namespace ERP.Api.Models.ModelAll
 {
     public class ThamSo
     {

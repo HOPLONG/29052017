@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Web.Models.NewModels.NganHang
+namespace ERP.Api.Models.NewModel.NganHang
 {
     public class ChiTietHachToanPhieuChi
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ERP.Api.Models.CreatedModel.Common
+namespace ERP.Api.Models.ModelAll
 {
     public class TimKiem
     {

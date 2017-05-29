@@ -36,7 +36,7 @@
         $http({
             method: 'POST',
             data: $scope.YeuCau,
-            url: window.location.origin + '/api/Api_YeuCauHoiGia'
+            url: 'http://27.72.144.148:8003/api/Api_YeuCauHoiGia'
         }).then(function successCallback(response) {
             SuccessSystem('Bạn đã gửi đơn hỏi giá thành công');
         }, function errorCallback(response) {
@@ -50,7 +50,7 @@
     $scope.nhatkyhoihang = function (mahang) {
         var mact = macongty;
         //Lưu vào CSDL
-        $http.get("/api/Api_XuLyYeuCauHoiGia/GetNhatKyHoiGia/" + mahang + "/" + mact)
+        $http.get("http://27.72.144.148:8003/api/Api_XuLyYeuCauHoiGia/GetNhatKyHoiGia/" + mahang + "/" + mact)
            .then(function successCallback(response) {
                $scope.nkhoihang = response.data;
            }, function errorCallback(response) {
@@ -61,7 +61,7 @@
     }
 
     $scope.AddNewComment = function (mahang, ghichu) {
-        $http.post('/api/Api_TonKhoHL/CapNhatGhiChu/'+mahang+'/'+ghichu).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_TonKhoHL/CapNhatGhiChu/'+mahang+'/'+ghichu).then(function (response) {
             SuccessSystem(response.data);
             $scope.datatonkho('AT8');
         }, function errorCallback(response) {
@@ -71,7 +71,7 @@
 
     //=====Get data giữ hàng=================
     $scope.GetDataGiuHang = function (mahang) {
-        $http.get(window.location.origin + '/api/Api_KhoGiuHang/GetDataGiuKho/' + macongty+'/'+mahang)
+        $http.get('http://27.72.144.148:8003/api/Api_KhoGiuHang/GetDataGiuKho/' + macongty+'/'+mahang)
          .then(function (response) {
              if (response.data) {
                  $scope.ListDataGiuKho = response.data;

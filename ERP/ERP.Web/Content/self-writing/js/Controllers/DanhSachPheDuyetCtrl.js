@@ -1,5 +1,5 @@
 ﻿app.controller('DanhSachPheDuyetCtrl', function ($http, $scope) {
-    $http.post('/api/Api_DangKyPheDuyetPO/DanhsachpheduyetPO').then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_DangKyPheDuyetPO/DanhsachpheduyetPO').then(function (response) {
         $scope.list_dspheduyet = response.data;
     });
     $scope.hienthidong = function () {
@@ -11,7 +11,7 @@
     $scope.showtable_marketing = false;
 
 
-    $http.post(window.location.origin + '/api/Api_DangKyPheDuyetPO/Danhsachduocpheduyet')
+    $http.post('http://27.72.144.148:8003/api/Api_DangKyPheDuyetPO/Danhsachduocpheduyet')
             .then(function (response) {
                 if (response.data) {
                     $scope.arrayMarketing = response.data;
@@ -52,8 +52,8 @@
             TRUC_THUOC: 'HOPLONG',
             GHI_CHU: $scope.ghi_chu_phe_duyet,
         }
-        $http.post('/api/Api_DangKyPheDuyetPO/PostXL_DANG_KY_PHE_DUYET', data_add).then(function (response) {
-            $http.post('/api/Api_DangKyPheDuyetPO/DanhsachpheduyetPO').then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_DangKyPheDuyetPO/PostXL_DANG_KY_PHE_DUYET', data_add).then(function (response) {
+            $http.post('http://27.72.144.148:8003/api/Api_DangKyPheDuyetPO/DanhsachpheduyetPO').then(function (response) {
                 $scope.list_dspheduyet = response.data;
                 $scope.ho_va_ten_marketing = '';
                 $scope.showrow = false;

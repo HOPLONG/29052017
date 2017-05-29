@@ -9,7 +9,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     //công nợ khách hàng
     $scope.GetDataCongNoKH = function (makhachhang, tuancongno) {
         $scope.tuancongno = tuancongno;
-        $http.post(window.location.origin + '/api/Api_KH_CongNo/CongNoTheoNhanVien/' + macongty + '/' + makhachhang + '/' + isadmin + '/' + $scope.tuancongno.TUAN_CONG_NO)
+        $http.post('http://27.72.144.148:8003/api/Api_KH_CongNo/CongNoTheoNhanVien/' + macongty + '/' + makhachhang + '/' + isadmin + '/' + $scope.tuancongno.TUAN_CONG_NO)
          .then(function (response) {
              if (response.data) {
                  $scope.ListCongNoKH = response.data;
@@ -24,7 +24,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     //comment công nợ khách hàng
     $scope.GetDataComment_CongNoKH = function (makhachhang, tuancongno) {
         $scope.tuancongno = tuancongno;
-        $http.get(window.location.origin + '/api/Api_Comments_CongNo_KH/GetData_Comments_CongNo/' + makhachhang + '/' + $scope.tuancongno.TUAN_CONG_NO)
+        $http.get('http://27.72.144.148:8003/api/Api_Comments_CongNo_KH/GetData_Comments_CongNo/' + makhachhang + '/' + $scope.tuancongno.TUAN_CONG_NO)
          .then(function (response) {
              if (response.data) {
                  $scope.ListCommentCongNo = response.data;
@@ -45,10 +45,10 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
             MA_KHACH_HANG: $scope.item.MA_KHACH_HANG,
             TUAN_CONG_NO : $scope.tuancongno.TUAN_CONG_NO,
         }
-        $http.post('/api/Api_Comments_CongNo_KH', data_add).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_Comments_CongNo_KH', data_add).then(function (response) {
             SuccessSystem("Thêm comment thành công");
 
-            $http.get(window.location.origin + '/api/Api_Comments_CongNo_KH/GetData_Comments_CongNo/' + response.data.MA_KHACH_HANG + '/' + response.data.TUAN_CONG_NO)
+            $http.get('http://27.72.144.148:8003/api/Api_Comments_CongNo_KH/GetData_Comments_CongNo/' + response.data.MA_KHACH_HANG + '/' + response.data.TUAN_CONG_NO)
             .then(function (response) {
                 if (response.data) {
                     $scope.ListCommentCongNo = response.data;
@@ -57,7 +57,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                 console.log(error);
             })
 
-            $http.post(window.location.origin + '/api/Api_KH_CongNo/CongNoTheoNhanVien/' + macongty + '/' + response.data.MA_KHACH_HANG + '/' + isadmin + '/' + response.data.TUAN_CONG_NO)
+            $http.post('http://27.72.144.148:8003/api/Api_KH_CongNo/CongNoTheoNhanVien/' + macongty + '/' + response.data.MA_KHACH_HANG + '/' + isadmin + '/' + response.data.TUAN_CONG_NO)
          .then(function (response) {
              if (response.data) {
                  $scope.ListCongNoKH = response.data;
@@ -76,7 +76,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     //-------------end công nợ KH----------------------
 
     $scope.load_danhsachtuancongno = function (makh) {
-        $http.get('/api/Api_CongNoKH/DanhSachTuanCongNo/' + makh).then(function (response) {
+        $http.get('http://27.72.144.148:8003/api/Api_CongNoKH/DanhSachTuanCongNo/' + makh).then(function (response) {
             $scope.list_danhsachtuancongno = response.data;
             $scope.ListCommentCongNo = [];
             $scope.ListCongNoKH = [];
@@ -126,7 +126,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                 isadmin: isadmin,
                 tukhoa: tukhoa
             }
-            $http.post('/api/Api_KH/TimKhachTheoMa/' + page, thongtintimkiem)
+            $http.post('http://27.72.144.148:8003/api/Api_KH/TimKhachTheoMa/' + page, thongtintimkiem)
           .then(function successCallback(response) {
               $scope.filtered = response.data;
 
@@ -154,7 +154,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                 isadmin: isadmin,
                 tukhoa: tukhoa
             }
-            $http.post('/api/Api_KH/TimKhachTheoEmail/' + page, thongtintimkiem)
+            $http.post('http://27.72.144.148:8003/api/Api_KH/TimKhachTheoEmail/' + page, thongtintimkiem)
           .then(function successCallback(response) {
               $scope.filtered = response.data;
 
@@ -184,7 +184,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                 isadmin: isadmin,
                 tukhoa: tukhoa
             }
-            $http.post('/api/Api_KH/TimKhachTheoTen/' + page, thongtintimkiem)
+            $http.post('http://27.72.144.148:8003/api/Api_KH/TimKhachTheoTen/' + page, thongtintimkiem)
           .then(function successCallback(response) {
               $scope.filtered = response.data;
 
@@ -213,7 +213,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                 isadmin: isadmin,
                 tukhoa: tukhoa
             }
-            $http.post('/api/Api_KH/TimKhachTheoSDT/' + page, thongtintimkiem)
+            $http.post('http://27.72.144.148:8003/api/Api_KH/TimKhachTheoSDT/' + page, thongtintimkiem)
           .then(function successCallback(response) {
               $scope.filtered = response.data;
 
@@ -240,7 +240,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
             isadmin: isadmin,
             tukhoa: tukhoa
         }
-        $http.post('/api/Api_KH/SoTrangTimKiem', thongtintimkiem)
+        $http.post('http://27.72.144.148:8003/api/Api_KH/SoTrangTimKiem', thongtintimkiem)
           .then(function successCallback(response) {
               $scope.tongsodong = response.data;
               $scope.tongsotrang = $scope.tongsodong / 15;
@@ -267,7 +267,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
             isadmin: isadmin,
             tukhoa: tukhoa
         }
-        $http.post('/api/Api_KH/PhantrangKH/' + pageNumber, datas)
+        $http.post('http://27.72.144.148:8003/api/Api_KH/PhantrangKH/' + pageNumber, datas)
             .then(function successCallback(response) {
                 if (typeof (response.data) == "object") {
                     $scope.filtered = response.data;
@@ -293,7 +293,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     //Lấy tổng số trang
     //$scope.TongSoDong = function () {
 
-    //    $http.post('/api/Api_KH/TongSoTrang/' + macongty)
+    //    $http.post('http://27.72.144.148:8003/api/Api_KH/TongSoTrang/' + macongty)
     //        .then(function successCallback(response) {
     //            $scope.tongsodong = response.data;
     //            $scope.tongsotrang = $scope.tongsodong / 15;
@@ -318,7 +318,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         tukhoa: tukhoa
     }
 
-    $http.post('/api/Api_KH/DemTongSoKH_HL', thamso).then(function (response) {
+    $http.post('http://27.72.144.148:8003/api/Api_KH/DemTongSoKH_HL', thamso).then(function (response) {
         $scope.tongsokhachhang_HL = response.data;
         pagination2.make(parseInt($scope.tongsokhachhang_HL), 15);
     });
@@ -335,7 +335,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         $http({
             method: 'POST',
             data: datas,
-            url: window.location.origin + '/api/Api_KH/PhantrangKH/' + pageNumber
+            url: 'http://27.72.144.148:8003/api/Api_KH/PhantrangKH/' + pageNumber
         }).then(function successCallback(response) {
             $scope.filtered = response.data;
         });
@@ -363,7 +363,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         $http({
             method: 'POST',
             data: $scope.thong_ke_mua_hang,
-            url: window.location.origin + '/api/Api_KH/ThongKeMuaHang/' + makh + '/' + pageNumber
+            url: 'http://27.72.144.148:8003/api/Api_KH/ThongKeMuaHang/' + makh + '/' + pageNumber
         }).then(function successCallback(response) {
             $scope.thong_ke_mua_hang = response.data;
         });
@@ -398,7 +398,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     //    //    isadmin:isadmin,
     //    //    maphongban: phongban,
     //    //    }
-    //    //$http.post("http://27.72.144.148:8003/api/KhachHang/PhantrangkhachHang", datas)
+    //    //$http.post("http://27.72.144.148:8003http://27.72.144.148:8003/api/KhachHang/PhantrangkhachHang", datas)
     //    //    .then(function successCallback(response) {
     //    //        $scope.filtered = response.data;
     //    //    });
@@ -406,7 +406,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     //    $http({
     //        method: 'POST',
     //        data: $scope.filtered,
-    //        url: window.location.origin + '/api/Api_KH/PhantrangKH/' + pageNumber + '/' + salestao
+    //        url: window.location.origin + 'http://27.72.144.148:8003/api/Api_KH/PhantrangKH/' + pageNumber + '/' + salestao
     //    }).then(function successCallback(response) {
     //        $scope.filtered = response.data;
     //    });
@@ -419,7 +419,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         $http({
             method: 'POST',
             data: $scope.filtered,
-            url: window.location.origin + '/api/Api_KH/PhantrangKH/' + pageNumber + '/' + salestao
+            url: 'http://27.72.144.148:8003/api/Api_KH/PhantrangKH/' + pageNumber + '/' + salestao
         }).then(function successCallback(response) {
             $scope.filtered = response.data;
         });
@@ -508,7 +508,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         $http({
             method: 'POST',
             data: $scope.Thong_tin_KH,
-            url: window.location.origin + '/api/Api_KH/ThemMoiKH'
+            url: 'http://27.72.144.148:8003/api/Api_KH/ThemMoiKH'
         }).then(function successCallback(response) {
             $scope.Thong_tin_KH = response.data;
 
@@ -539,7 +539,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
             $http({
                 method: 'GET',
                 data: $scope.lastmakh,
-                url: window.location.origin + '/api/Api_KH/GetIdKH'
+                url: 'http://27.72.144.148:8003/api/Api_KH/GetIdKH'
             }).then(function successCallback(response) {
                 SuccessSystem('Thêm thông tin chung khách hàng thành công');
                 $scope.lastmakh = response.data;
@@ -581,7 +581,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                     $http({
                         method: 'POST',
                         data: $scope.Lien_he_TK,
-                        url: window.location.origin + '/api/Api_ArrayLienHeKH'
+                        url: 'http://27.72.144.148:8003/api/Api_ArrayLienHeKH'
                     }).then(function successCallback(zzz) {
                         SuccessSystem('Thêm liên hệ khách hàng thành công');
                     }, function errorCallback(zzz) {
@@ -595,7 +595,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                     $http({
                         method: 'POST',
                         data: $scope.Tai_khoan_KH,
-                        url: window.location.origin + '/api/Api_TaiKhoanKH/' + $scope.lastmakh
+                        url: 'http://27.72.144.148:8003/api/Api_TaiKhoanKH/' + $scope.lastmakh
                     }).then(function successCallback(response1) {
                         SuccessSystem("Thêm tài khoản khách hàng thành công");
                     }, function errorCallback(response1) {
@@ -646,7 +646,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         $http({
             method: 'POST',
             data: $scope.thong_ke_mua_hang,
-            url: window.location.origin + '/api/Api_KH/ThongKeMuaHang/' + makh + '/' + 1
+            url: 'http://27.72.144.148:8003/api/Api_KH/ThongKeMuaHang/' + makh + '/' + 1
         }).then(function successCallback(response) {
             $scope.thong_ke_mua_hang = response.data;
         });
@@ -788,7 +788,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
                     ErrorSystem("Đã xảy ra lỗi");
                 });
             } else {
-                $http.post('/api/Api_SalePhuTrach', data_savesalesphutrach).then(function (response) {
+                $http.post('http://27.72.144.148:8003/api/Api_SalePhuTrach', data_savesalesphutrach).then(function (response) {
                     $scope.phantrangkh(0);
                     $scope.new_ct_khachhang();
                     SuccessSystem("Thành công!");
@@ -900,7 +900,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         }
 
         //lấy danh sách marketing--------------
-        $http.get(window.location.origin + '/api/Api_BaiViet_TongHop/GetAllMarketing/' + macongty)
+        $http.get('http://27.72.144.148:8003/api/Api_BaiViet_TongHop/GetAllMarketing/' + macongty)
         .then(function (kq) {
             if (kq.data) {
                 $scope.danhsachMarketing = kq.data;
@@ -924,7 +924,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
         });
         //--------------------------------------
 
-        $http.post(window.location.origin + '/api/Api_BaiViet_TongHop/AddNotification', $scope.DanhSachNotification)
+        $http.post('http://27.72.144.148:8003/api/Api_BaiViet_TongHop/AddNotification', $scope.DanhSachNotification)
             .then(function successCallback(response2) {
                 SuccessSystem("Đã thông báo đến Marketing và sale phụ trách khách hàng");
                 $scope.DanhSachNotification = [];
@@ -989,7 +989,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
             THONG_TIN_PHAN_HOI: edit_thong_tin_phan_hoi
         }
 
-        $http.put('/api/Api_PhanHoiKhachHang/' + id, data_save).then(function successCallback(response1) {
+        $http.put('http://27.72.144.148:8003/api/Api_PhanHoiKhachHang/' + id, data_save).then(function successCallback(response1) {
             SuccessSystem("Sửa phản hồi thành công");
             $scope.AddNotification(makh, salephutrach);
 
@@ -1117,7 +1117,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     $scope.arrayStaffs = [];
     $scope.showtable_ho_va_ten = false;
 
-    $http.get(window.location.origin + '/api/Api_NhanvienKD')
+    $http.get('http://27.72.144.148:8003/api/Api_NhanvienKD')
             .then(function (response) {
                 if (response.data) {
                     $scope.arrayStaffs = response.data;
@@ -1158,7 +1158,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     $scope.arrayKhachHang = [];
     $scope.showtable_khach_hang = false;
 
-    $http.get(window.location.origin + '/api/Api_KH')
+    $http.get('http://27.72.144.148:8003/api/Api_KH')
             .then(function (response) {
                 if (response.data) {
                     $scope.arrayKhachHang = response.data;
@@ -1353,7 +1353,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
 
     $scope.delete_policy = function (policy) {
         $scope.policy = policy;
-        $http.delete('/api/Api_KhachHangPolicy/' + $scope.policy.ID).then(function (response) {
+        $http.delete('http://27.72.144.148:8003/api/Api_KhachHangPolicy/' + $scope.policy.ID).then(function (response) {
             SuccessSystem('Xóa thành công');
             $scope.get_policy($scope.policy.MA_KHACH_HANG);
         }, function errorCallback(response) {
@@ -1410,7 +1410,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     $scope.showtable_VTHH = false;
 
 
-    $http.get(window.location.origin + '/api/Api_NhomVTHHHL')
+    $http.get('http://27.72.144.148:8003/api/Api_NhomVTHHHL')
             .then(function (response) {
                 if (response.data) {
                     $scope.arrayVTHH = response.data;
@@ -1452,7 +1452,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     $scope.showtable_VTHH_Father = false;
 
 
-    $http.get(window.location.origin + '/api/Api_NhomVTHHHL')
+    $http.get('http://27.72.144.148:8003/api/Api_NhomVTHHHL')
             .then(function (response) {
                 if (response.data) {
                     $scope.arrayVTHH_Father = response.data;
@@ -1492,7 +1492,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     $scope.showtable_marketing = false;
 
 
-    $http.get(window.location.origin + '/api/Api_KhachHangPolicy/GetNvMarketing')
+    $http.get('http://27.72.144.148:8003/api/Api_KhachHangPolicy/GetNvMarketing')
             .then(function (response) {
                 if (response.data) {
                     $scope.arrayMarketing = response.data;
@@ -1534,7 +1534,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     $scope.showtable_purchase = false;
 
 
-    $http.get(window.location.origin + '/api/Api_KhachHangPolicy/GetNvMuaHang')
+    $http.get('http://27.72.144.148:8003/api/Api_KhachHangPolicy/GetNvMuaHang')
             .then(function (response) {
                 if (response.data) {
                     $scope.arrayPurc = response.data;
@@ -1618,7 +1618,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     //End Lọc khách hàng theo tên
 
     $scope.Xoa_KH = function (makh) {
-        $http.delete('/api/Api_KH/DeleteKH/' + makh).then(function (response) {
+        $http.delete('http://27.72.144.148:8003/api/Api_KH/DeleteKH/' + makh).then(function (response) {
             SuccessSystem('Xóa thành công');
             reload();
         }, function errorCallback(response) {
@@ -1628,7 +1628,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     };
 
     $scope.danhsachcongty = function () {
-        $http.post('/api/Api_CCTC_CongTy/DanhsachCongty').then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_CCTC_CongTy/DanhsachCongty').then(function (response) {
             $scope.list_congty_copy = response.data;
         });
     };
@@ -1644,7 +1644,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
 
     $scope.get_dsnhanvien_TA = function (macongty) {
         $scope.hovaten_copy = '';
-        $http.post('/api/Api_CCTC_CongTy/Get_SALE_CHI_NHANH/' + macongty)
+        $http.post('http://27.72.144.148:8003/api/Api_CCTC_CongTy/Get_SALE_CHI_NHANH/' + macongty)
         .then(function (response) {
             if (response.data) {
                 $scope.array_sale_chi_nhanh = response.data;
@@ -1685,7 +1685,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
             SALES_PHU_TRACH: $scope.username_copy,
         }
 
-        $http.post('/api/Api_KH/CopyNewKH/' + makh, data_add).then(function (response) {
+        $http.post('http://27.72.144.148:8003/api/Api_KH/CopyNewKH/' + makh, data_add).then(function (response) {
             SuccessSystem('Chuyển thành công với mã khách hàng mới là ' + response.data);
         }, function errorCallback(response) {
             ErrorSystem('Lỗi khi chuyển');
@@ -1695,7 +1695,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
 
     $scope.find_thong_ke = function (mahang, makhach) {
         if (mahang != "") {
-            $http.post('/api/Api_KH/TimKiemThongKeMuaHang/' + makhach + '/' + mahang).then(function (response) {
+            $http.post('http://27.72.144.148:8003/api/Api_KH/TimKiemThongKeMuaHang/' + makhach + '/' + mahang).then(function (response) {
                 $scope.thong_ke_mua_hang = response.data;
             });
             $('#pagination_thongke').hide();
@@ -1706,7 +1706,7 @@ app.controller('khachhangCtrl', function (khachhangService, $scope, $http, $loca
     };
 
     $scope.load_nhanvienkho = function () {
-        $http.get('/api/Api_NhanvienKD/GetNhanvienKho').then(function (response) {
+        $http.get('http://27.72.144.148:8003/api/Api_NhanvienKD/GetNhanvienKho').then(function (response) {
             $scope.list_nhanvienkho = response.data;
         });
     }

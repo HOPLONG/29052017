@@ -9,7 +9,7 @@
             macongty: macongty,
             isadmin: isadmin
         }
-        $http.post(window.location.origin + '/api/Api_BaoCaoKhachHang/KH_Khong_Mua_Gan_Day/' + page, thongtintimkiem)
+        $http.post('http://27.72.144.148:8003/api/Api_BaoCaoKhachHang/KH_Khong_Mua_Gan_Day/' + page, thongtintimkiem)
          .then(function (response) {
              if (response.data) {
                  $scope.ListDataKH_Khong_Mua_Gan_Day = response.data;

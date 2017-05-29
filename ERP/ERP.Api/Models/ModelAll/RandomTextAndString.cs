@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace ERP.Web.Models.BusinessModel
+namespace ERP.Api.Models.ModelAll
 {
     public class RandomTextAndString
     {

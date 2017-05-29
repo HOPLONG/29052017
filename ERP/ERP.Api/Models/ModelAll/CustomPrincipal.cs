@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Principal;
 using System.Web;
 
-namespace ERP.Web.Security
+namespace ERP.Api.Models.ModelAll
 {
     public class CustomPrincipal : IPrincipal
     {
