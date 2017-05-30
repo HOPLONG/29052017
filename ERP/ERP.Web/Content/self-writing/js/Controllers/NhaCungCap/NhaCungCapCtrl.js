@@ -104,7 +104,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
         $http({
             method: 'POST',
             data: $scope.Thong_tin_NCC,
-            url: window.location.origin + '/api/Api_NhaCungCap'
+            url: '27.72.144.148:8003/api/Api_NhaCungCap'
         }).then(function successCallback(response) {
             SuccessSystem('Thêm thông tin chung nhà cung cấp thành công');
             $scope.Thong_tin_NCC = response.data;
@@ -131,7 +131,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
                 $http({
                     method: 'POST',
                     data: $scope.Lien_he_TK,
-                    url: window.location.origin + '/api/Api_ArrayLienHeNCC'
+                    url: '27.72.144.148:8003/api/Api_ArrayLienHeNCC'
                 }).then(function successCallback(zzz) {
                     SuccessSystem('Thêm liên hệ nhà cung cấp thành công');
                 }, function errorCallback(zzz) {
@@ -144,7 +144,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
                 $http({
                     method: 'POST',
                     data: $scope.Loai_HANG_CUNG_CAP,
-                    url: window.location.origin + '/api/Api_LoaiHangCungCap/' + $scope.Thong_tin_NCC.MA_NHA_CUNG_CAP
+                    url: '27.72.144.148:8003/api/Api_LoaiHangCungCap/' + $scope.Thong_tin_NCC.MA_NHA_CUNG_CAP
                 }).then(function successCallback(response1) {
                     SuccessSystem('Thêm loại hàng cung cấp thành công');
                 }, function errorCallback(response1) {
@@ -158,7 +158,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
                 $http({
                     method: 'POST',
                     data: $scope.Tai_khoan_NCC,
-                    url: window.location.origin + '/api/Api_TaiKhoanNCC/' + $scope.Thong_tin_NCC.MA_NHA_CUNG_CAP
+                    url: '27.72.144.148:8003/api/Api_TaiKhoanNCC/' + $scope.Thong_tin_NCC.MA_NHA_CUNG_CAP
                 }).then(function successCallback(response1) {
                     SuccessSystem('Thêm tài khoản nhà cung cấp thành công');
                 }, function errorCallback(response1) {
@@ -343,7 +343,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
             $http({
                 method: 'PUT',
                 data: $scope.kh_save, mancc,
-                url: window.location.origin + '/api/Api_NhaCungCap/' + mancc
+                url: '27.72.144.148:8003/api/Api_NhaCungCap/' + mancc
             }).then(function successCallback(response1) {
                 SuccessSystem('Sửa nhà cung cấp thành công');
                 loadncc();
@@ -387,7 +387,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
         $http({
             method: 'PUT',
             data: data_save,
-            url: window.location.origin + '/api/Api_LienHeNhaCungCap/PuttNCC_LIEN_HE/'
+            url: '27.72.144.148:8003/api/Api_LienHeNhaCungCap/PuttNCC_LIEN_HE/'
         }).then(function successCallback(response1) {
             SuccessSystem('Sửa liên hệ nhà cung cấp thành công');
             loadncc();
@@ -418,7 +418,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
         $http({
             method: 'POST',
             data: data_add,
-                url: window.location.origin + '/api/Api_LienHeNhaCungCap/'
+                url: '27.72.144.148:8003/api/Api_LienHeNhaCungCap/'
         }).then(function successCallback(response1) {
             SuccessSystem('Thêm mới liên hệ nhà cung cấp thành công');
             loadncc();
@@ -443,7 +443,7 @@ app.controller('nhacungcapCtrl', function (nhacungcapService, $scope, $http, $lo
         $http({
             method: 'POST',
             data: data_add,
-            url: window.location.origin + '/api/Api_TaiKhoanNCC/'
+            url: '27.72.144.148:8003/api/Api_TaiKhoanNCC/'
         }).then(function successCallback(response1) {
             SuccessSystem('Thêm mới tài khoản nhà cung cấp thành công');
             loadncc();

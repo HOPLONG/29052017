@@ -9,8 +9,8 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Data.SqlClient;
-using ERP.Web.Models.BusinessModel;
 using ERP.Api.Models;
+using ERP.Api.Models.ModelAll;
 
 namespace ERP.Api.Controllers.Kho
 {

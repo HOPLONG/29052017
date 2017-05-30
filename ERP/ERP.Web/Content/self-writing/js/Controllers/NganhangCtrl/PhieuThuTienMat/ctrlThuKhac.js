@@ -208,7 +208,7 @@
         /**
         *Tìm Tài khoản tự động
         */
-        //$http.get(window.location.origin + '/api/DM_DINH_KHOAN_TU_DONG/MA_LOAI_CHUNG_TU/THU')
+        //$http.get('27.72.144.148:8003/api/DM_DINH_KHOAN_TU_DONG/MA_LOAI_CHUNG_TU/THU')
         // .then(function (response) {
         //     if (response.data) {
         //         $scope.sotk_no = response.data.tk_no;

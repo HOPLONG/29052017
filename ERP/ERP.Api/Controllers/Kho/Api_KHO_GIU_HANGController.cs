@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ERP.Api.Models;
+using ERP.Api.Models.NewModel.Kho;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -8,9 +10,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using ERP.Web.Models.Database;
-using ERP.Web.Models.NewModels.NhapKho;
-using ERP.Web.Common;
 
 namespace ERP.Web.Api.Kho
 {

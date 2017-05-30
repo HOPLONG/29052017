@@ -18,14 +18,14 @@ namespace ERP.Web.Models.Database
         public DM_KHO()
         {
             this.DM_KHO1 = new HashSet<DM_KHO>();
-            this.KHO_CT_CHUYEN_KHO = new HashSet<KHO_CT_CHUYEN_KHO>();
-            this.KHO_CT_CHUYEN_KHO1 = new HashSet<KHO_CT_CHUYEN_KHO>();
-            this.KHO_CT_NHAP_KHO = new HashSet<KHO_CT_NHAP_KHO>();
-            this.KHO_CT_XUAT_KHO = new HashSet<KHO_CT_XUAT_KHO>();
             this.TONKHO_HOPLONG = new HashSet<TONKHO_HOPLONG>();
             this.TONKHO_TAHP = new HashSet<TONKHO_TAHP>();
             this.TONKHO_TADN = new HashSet<TONKHO_TADN>();
             this.TONKHO_TAHCM = new HashSet<TONKHO_TAHCM>();
+            this.KHO_CT_CHUYEN_KHO = new HashSet<KHO_CT_CHUYEN_KHO>();
+            this.KHO_CT_CHUYEN_KHO1 = new HashSet<KHO_CT_CHUYEN_KHO>();
+            this.KHO_CT_NHAP_KHO = new HashSet<KHO_CT_NHAP_KHO>();
+            this.KHO_CT_XUAT_KHO = new HashSet<KHO_CT_XUAT_KHO>();
         }
     
         public string MA_KHO { get; set; }
@@ -40,14 +40,6 @@ namespace ERP.Web.Models.Database
         public virtual ICollection<DM_KHO> DM_KHO1 { get; set; }
         public virtual DM_KHO DM_KHO2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHO_CT_CHUYEN_KHO> KHO_CT_CHUYEN_KHO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHO_CT_CHUYEN_KHO> KHO_CT_CHUYEN_KHO1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHO_CT_NHAP_KHO> KHO_CT_NHAP_KHO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHO_CT_XUAT_KHO> KHO_CT_XUAT_KHO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TONKHO_HOPLONG> TONKHO_HOPLONG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TONKHO_TAHP> TONKHO_TAHP { get; set; }
@@ -55,5 +47,13 @@ namespace ERP.Web.Models.Database
         public virtual ICollection<TONKHO_TADN> TONKHO_TADN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TONKHO_TAHCM> TONKHO_TAHCM { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHO_CT_CHUYEN_KHO> KHO_CT_CHUYEN_KHO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHO_CT_CHUYEN_KHO> KHO_CT_CHUYEN_KHO1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHO_CT_NHAP_KHO> KHO_CT_NHAP_KHO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHO_CT_XUAT_KHO> KHO_CT_XUAT_KHO { get; set; }
     }
 }

@@ -758,6 +758,8 @@
     <Property Name="SDT1" Type="varchar" MaxLength="64" Nullable="false" />
     <Property Name="SDT2" Type="varchar" MaxLength="64" />
     <Property Name="TINH_TRANG_LAM_VIEC" Type="nvarchar" MaxLength="64" />
+    <Property Name="NGAY_TAO" Type="date" />
+    <Property Name="da_export" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="KH_LOAI">
     <Key>
@@ -5920,6 +5922,7 @@
     <Parameter Name="username" Type="varchar" Mode="In" />
     <Parameter Name="sotrang" Type="int" Mode="In" />
   </Function>
+  <Function Name="Prod_KH_ListLienHe_TheoNgay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="Prod_KH_LocKhachTheoSale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="macongty" Type="varchar" Mode="In" />
     <Parameter Name="sale" Type="varchar" Mode="In" />

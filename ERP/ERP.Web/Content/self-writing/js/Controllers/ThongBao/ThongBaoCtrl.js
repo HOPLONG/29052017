@@ -6,7 +6,7 @@ app.controller('ThongBaoCtrl', function ($scope, $http) {
     function init() {
         //Get List thông báo mark
         $scope.listThongBaoMark;
-        $http.get(window.location.origin + '/api/HT_ThongBaoNV/GetThongBaoMark/' + Username)
+        $http.get('27.72.144.148:8003/api/HT_ThongBaoNV/GetThongBaoMark/' + Username)
         .then(function (response) {
             if (response.data) {
                 $scope.listThongBaoMark = response.data;
@@ -16,7 +16,7 @@ app.controller('ThongBaoCtrl', function ($scope, $http) {
         });
         //Get List thông báo phòng ban
         $scope.ListThongBaoPB = [];
-        $http.get(window.location.origin + '/api/HT_ThongBaoNV/GetThongBaoPhongBan/' + MaPhongBan)
+        $http.get('27.72.144.148:8003/api/HT_ThongBaoNV/GetThongBaoPhongBan/' + MaPhongBan)
         .then(function (response) {
             if (response.data) {
                 $scope.ListThongBaoPB = response.data;
@@ -27,7 +27,7 @@ app.controller('ThongBaoCtrl', function ($scope, $http) {
       
         //Get List thông báo nhân viên
         $scope.ListThongBaoNV = [];
-        $http.get(window.location.origin + '/api/HT_ThongBaoNV/GetThongBaoNV/' + Username)
+        $http.get('27.72.144.148:8003/api/HT_ThongBaoNV/GetThongBaoNV/' + Username)
         .then(function (response) {
             if (response.data) {
                 $scope.ListThongBaoNV = response.data;

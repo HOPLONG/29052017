@@ -24,7 +24,7 @@ namespace ERP.Web.Models.Database
         public string GHI_CHU { get; set; }
         public string LOAI_TAI_KHOAN { get; set; }
     
-        public virtual DM_LOAI_TK_NGAN_HANG DM_LOAI_TK_NGAN_HANG { get; set; }
         public virtual KH KH { get; set; }
+        public virtual DM_LOAI_TK_NGAN_HANG DM_LOAI_TK_NGAN_HANG { get; set; }
     }
 }

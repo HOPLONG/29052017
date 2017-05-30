@@ -41,10 +41,10 @@ namespace ERP.Web.Models.Database
     
         public virtual HT_NGUOI_DUNG HT_NGUOI_DUNG { get; set; }
         public virtual KHO_NHAP_KHO KHO_NHAP_KHO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MH_CT_DE_NGHI_NHAP_KHO> MH_CT_DE_NGHI_NHAP_KHO { get; set; }
         public virtual NCC_LIEN_HE NCC_LIEN_HE { get; set; }
         public virtual NCC NCC { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MH_CT_DE_NGHI_NHAP_KHO> MH_CT_DE_NGHI_NHAP_KHO { get; set; }
         public virtual MH_PO_MUA_HANG MH_PO_MUA_HANG { get; set; }
     }
 }

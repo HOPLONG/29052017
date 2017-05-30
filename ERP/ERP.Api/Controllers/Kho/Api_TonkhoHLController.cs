@@ -8,7 +8,6 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using ERP.Web.Models.NewModels;
 using System.Data.SqlClient;
 using ERP.Api.Models;
 

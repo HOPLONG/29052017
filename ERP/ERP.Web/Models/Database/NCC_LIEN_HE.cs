@@ -18,8 +18,8 @@ namespace ERP.Web.Models.Database
         public NCC_LIEN_HE()
         {
             this.MH_DE_NGHI_NHAP_KHO = new HashSet<MH_DE_NGHI_NHAP_KHO>();
-            this.MH_PO_MUA_HANG = new HashSet<MH_PO_MUA_HANG>();
             this.NCC_PUR_PHU_TRACH = new HashSet<NCC_PUR_PHU_TRACH>();
+            this.MH_PO_MUA_HANG = new HashSet<MH_PO_MUA_HANG>();
         }
     
         public int ID_LIEN_HE { get; set; }
@@ -39,10 +39,10 @@ namespace ERP.Web.Models.Database
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MH_DE_NGHI_NHAP_KHO> MH_DE_NGHI_NHAP_KHO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MH_PO_MUA_HANG> MH_PO_MUA_HANG { get; set; }
         public virtual NCC NCC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NCC_PUR_PHU_TRACH> NCC_PUR_PHU_TRACH { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MH_PO_MUA_HANG> MH_PO_MUA_HANG { get; set; }
     }
 }

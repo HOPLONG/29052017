@@ -9,12 +9,10 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using System.Text.RegularExpressions;
-using ERP.Web.Models.NewModels.XuatKho;
-using ERP.Web.Common;
-using ERP.Web.Security;
-using ERP.Web.Models.NewModels.All;
 using System.Data.SqlClient;
 using ERP.Api.Models;
+using ERP.Api.Models.ModelAll;
+using ERP.Api.Models.NewModel.XuatKho;
 
 namespace ERP.Api.Controllers.Kho
 {

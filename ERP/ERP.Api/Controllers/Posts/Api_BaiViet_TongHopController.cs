@@ -7,9 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ERP.Api.Controllers.Posts
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class Api_BaiViet_TongHopController : ApiController
     {
 

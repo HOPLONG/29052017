@@ -27,85 +27,68 @@ namespace ERP.Web.Models.Database
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CCTC_NHAN_VIEN> CCTC_NHAN_VIEN { get; set; }
+        public virtual DbSet<POST_CATEGORIES> POST_CATEGORIES { get; set; }
+        public virtual DbSet<POST> POSTS { get; set; }
+        public virtual DbSet<CCTC_PHONG_BAN> CCTC_PHONG_BAN { get; set; }
+        public virtual DbSet<HT_NGUOI_DUNG> HT_NGUOI_DUNG { get; set; }
         public virtual DbSet<BH_BAO_GIA> BH_BAO_GIA { get; set; }
         public virtual DbSet<BH_CT_BAO_GIA> BH_CT_BAO_GIA { get; set; }
-        public virtual DbSet<BH_CT_DON_BAN_HANG> BH_CT_DON_BAN_HANG { get; set; }
-        public virtual DbSet<BH_CT_DON_HANG_PO> BH_CT_DON_HANG_PO { get; set; }
-        public virtual DbSet<BH_DE_NGHI_GIU_HANG> BH_DE_NGHI_GIU_HANG { get; set; }
-        public virtual DbSet<BH_DON_BAN_HANG> BH_DON_BAN_HANG { get; set; }
+        public virtual DbSet<KH> KHs { get; set; }
         public virtual DbSet<BH_DON_HANG_DU_KIEN> BH_DON_HANG_DU_KIEN { get; set; }
+        public virtual DbSet<CCTC_CONG_TY> CCTC_CONG_TY { get; set; }
+        public virtual DbSet<BH_CT_DON_HANG_PO> BH_CT_DON_HANG_PO { get; set; }
         public virtual DbSet<BH_DON_HANG_PO> BH_DON_HANG_PO { get; set; }
-        public virtual DbSet<BH_PHUONG_AN_KINH_DOANH> BH_PHUONG_AN_KINH_DOANH { get; set; }
+        public virtual DbSet<KH_LIEN_HE> KH_LIEN_HE { get; set; }
+        public virtual DbSet<CN_CHI_TIET_NGHIEP_VU> CN_CHI_TIET_NGHIEP_VU { get; set; }
+        public virtual DbSet<CN_NGHIEP_VU> CN_NGHIEP_VU { get; set; }
+        public virtual DbSet<CN_CHI_TIET_NHOM_NGHIEP_VU> CN_CHI_TIET_NHOM_NGHIEP_VU { get; set; }
+        public virtual DbSet<CN_NHOM_NGHIEP_VU> CN_NHOM_NGHIEP_VU { get; set; }
+        public virtual DbSet<CN_NHOM_NGUOI_DUNG_NGHIEP_VU> CN_NHOM_NGUOI_DUNG_NGHIEP_VU { get; set; }
+        public virtual DbSet<HH> HHs { get; set; }
+        public virtual DbSet<HH_NHOM_VTHH> HH_NHOM_VTHH { get; set; }
+        public virtual DbSet<KH_PHAN_HOI_KHACH_HANG> KH_PHAN_HOI_KHACH_HANG { get; set; }
+        public virtual DbSet<KH_PHAN_LOAI_KHACH> KH_PHAN_LOAI_KHACH { get; set; }
+        public virtual DbSet<KH_POLICY> KH_POLICY { get; set; }
+        public virtual DbSet<TONKHO_HANG> TONKHO_HANG { get; set; }
+        public virtual DbSet<TONKHO_HOPLONG> TONKHO_HOPLONG { get; set; }
+        public virtual DbSet<KH_CHUYEN_SALES> KH_CHUYEN_SALES { get; set; }
+        public virtual DbSet<KH_SALES_PHU_TRACH> KH_SALES_PHU_TRACH { get; set; }
+        public virtual DbSet<TONKHO_TADN> TONKHO_TADN { get; set; }
+        public virtual DbSet<TONKHO_TAHCM> TONKHO_TAHCM { get; set; }
+        public virtual DbSet<TONKHO_TAHP> TONKHO_TAHP { get; set; }
+        public virtual DbSet<KH_TK_NGAN_HANG> KH_TK_NGAN_HANG { get; set; }
+        public virtual DbSet<NV_TINH_LUONG> NV_TINH_LUONG { get; set; }
         public virtual DbSet<CATEGORy> CATEGORIES { get; set; }
         public virtual DbSet<CCTC_BANG_CHAM_CONG> CCTC_BANG_CHAM_CONG { get; set; }
         public virtual DbSet<CCTC_BANG_LUONG> CCTC_BANG_LUONG { get; set; }
-        public virtual DbSet<CCTC_CONG_TY> CCTC_CONG_TY { get; set; }
         public virtual DbSet<CCTC_MO_HINH_CONG_TY> CCTC_MO_HINH_CONG_TY { get; set; }
-        public virtual DbSet<CCTC_NHAN_VIEN> CCTC_NHAN_VIEN { get; set; }
-        public virtual DbSet<CCTC_PHONG_BAN> CCTC_PHONG_BAN { get; set; }
-        public virtual DbSet<CN_CHI_TIET_NGHIEP_VU> CN_CHI_TIET_NGHIEP_VU { get; set; }
-        public virtual DbSet<CN_CHI_TIET_NHOM_NGHIEP_VU> CN_CHI_TIET_NHOM_NGHIEP_VU { get; set; }
-        public virtual DbSet<CN_NGHIEP_VU> CN_NGHIEP_VU { get; set; }
-        public virtual DbSet<CN_NGHIEP_VU_NHAN_VIEN> CN_NGHIEP_VU_NHAN_VIEN { get; set; }
-        public virtual DbSet<CN_NHOM_NGHIEP_VU> CN_NHOM_NGHIEP_VU { get; set; }
-        public virtual DbSet<CN_NHOM_NGUOI_DUNG_NGHIEP_VU> CN_NHOM_NGUOI_DUNG_NGHIEP_VU { get; set; }
-        public virtual DbSet<COMMENTS_CONG_NO_KH> COMMENTS_CONG_NO_KH { get; set; }
-        public virtual DbSet<DM_DINH_KHOAN_TU_DONG> DM_DINH_KHOAN_TU_DONG { get; set; }
         public virtual DbSet<DM_KHO> DM_KHO { get; set; }
         public virtual DbSet<DM_LOAI_CHUNG_TU> DM_LOAI_CHUNG_TU { get; set; }
         public virtual DbSet<DM_LOAI_DOI_TUONG> DM_LOAI_DOI_TUONG { get; set; }
         public virtual DbSet<DM_LOAI_TK_NGAN_HANG> DM_LOAI_TK_NGAN_HANG { get; set; }
-        public virtual DbSet<DM_MAU_SO_HOA_DON> DM_MAU_SO_HOA_DON { get; set; }
         public virtual DbSet<DM_TAI_KHOAN_HACH_TOAN> DM_TAI_KHOAN_HACH_TOAN { get; set; }
         public virtual DbSet<DM_TK_NGAN_HANG_NOI_BO> DM_TK_NGAN_HANG_NOI_BO { get; set; }
         public virtual DbSet<DV> DVs { get; set; }
-        public virtual DbSet<HH> HHs { get; set; }
         public virtual DbSet<HH_BANG_GIA_BAN> HH_BANG_GIA_BAN { get; set; }
         public virtual DbSet<HH_COMMENTS> HH_COMMENTS { get; set; }
         public virtual DbSet<HH_HANG_DUOC_QUAN_TAM> HH_HANG_DUOC_QUAN_TAM { get; set; }
-        public virtual DbSet<HH_NHOM_VTHH> HH_NHOM_VTHH { get; set; }
         public virtual DbSet<HT_CONG_VIEC_NHAN_VIEN> HT_CONG_VIEC_NHAN_VIEN { get; set; }
         public virtual DbSet<HT_LICH_SU_DANG_NHAP> HT_LICH_SU_DANG_NHAP { get; set; }
-        public virtual DbSet<HT_NGUOI_DUNG> HT_NGUOI_DUNG { get; set; }
         public virtual DbSet<HT_NHIEM_VU_PHONG_BAN> HT_NHIEM_VU_PHONG_BAN { get; set; }
         public virtual DbSet<HT_PHAN_HOI_PHAN_MEM> HT_PHAN_HOI_PHAN_MEM { get; set; }
         public virtual DbSet<HT_THONG_BAO_MARKETING> HT_THONG_BAO_MARKETING { get; set; }
-        public virtual DbSet<KH> KHs { get; set; }
-        public virtual DbSet<KH_CHUYEN_SALES> KH_CHUYEN_SALES { get; set; }
         public virtual DbSet<KH_CONG_NO> KH_CONG_NO { get; set; }
         public virtual DbSet<KH_DC_XUAT_HANG> KH_DC_XUAT_HANG { get; set; }
-        public virtual DbSet<KH_LIEN_HE> KH_LIEN_HE { get; set; }
         public virtual DbSet<KH_LOAI> KH_LOAI { get; set; }
-        public virtual DbSet<KH_PHAN_HOI_KHACH_HANG> KH_PHAN_HOI_KHACH_HANG { get; set; }
-        public virtual DbSet<KH_PHAN_LOAI_KHACH> KH_PHAN_LOAI_KHACH { get; set; }
-        public virtual DbSet<KH_POLICY> KH_POLICY { get; set; }
-        public virtual DbSet<KH_SALES_PHU_TRACH> KH_SALES_PHU_TRACH { get; set; }
         public virtual DbSet<KH_THONG_KE_MUA_HANG> KH_THONG_KE_MUA_HANG { get; set; }
-        public virtual DbSet<KH_TK_NGAN_HANG> KH_TK_NGAN_HANG { get; set; }
-        public virtual DbSet<KHO_CHUYEN_KHO> KHO_CHUYEN_KHO { get; set; }
-        public virtual DbSet<KHO_CT_CHUYEN_KHO> KHO_CT_CHUYEN_KHO { get; set; }
-        public virtual DbSet<KHO_CT_DNXH> KHO_CT_DNXH { get; set; }
-        public virtual DbSet<KHO_CT_NHAP_KHO> KHO_CT_NHAP_KHO { get; set; }
-        public virtual DbSet<KHO_CT_XUAT_KHO> KHO_CT_XUAT_KHO { get; set; }
-        public virtual DbSet<KHO_DNXH> KHO_DNXH { get; set; }
         public virtual DbSet<KHO_GIU_HANG> KHO_GIU_HANG { get; set; }
-        public virtual DbSet<KHO_HANG_CAN_GIU> KHO_HANG_CAN_GIU { get; set; }
-        public virtual DbSet<KHO_INIT_TACH_GOP_MA> KHO_INIT_TACH_GOP_MA { get; set; }
         public virtual DbSet<KHO_NHAP_KHO> KHO_NHAP_KHO { get; set; }
         public virtual DbSet<KHO_NHAT_KY_TACH_GOP_MA> KHO_NHAT_KY_TACH_GOP_MA { get; set; }
         public virtual DbSet<KHO_XUAT_KHO> KHO_XUAT_KHO { get; set; }
         public virtual DbSet<KT_SO_NHAT_KY_CHUNG> KT_SO_NHAT_KY_CHUNG { get; set; }
-        public virtual DbSet<MENU> MENUs { get; set; }
-        public virtual DbSet<MENU_USER> MENU_USER { get; set; }
-        public virtual DbSet<MH_CT_DE_NGHI_NHAP_KHO> MH_CT_DE_NGHI_NHAP_KHO { get; set; }
-        public virtual DbSet<MH_CT_MDV> MH_CT_MDV { get; set; }
-        public virtual DbSet<MH_DE_NGHI_JOIN_PO_MH> MH_DE_NGHI_JOIN_PO_MH { get; set; }
         public virtual DbSet<MH_DE_NGHI_NHAP_KHO> MH_DE_NGHI_NHAP_KHO { get; set; }
         public virtual DbSet<MH_HANG_CAN_DAT> MH_HANG_CAN_DAT { get; set; }
-        public virtual DbSet<MH_JOIN_BH> MH_JOIN_BH { get; set; }
-        public virtual DbSet<MH_MDV> MH_MDV { get; set; }
-        public virtual DbSet<MH_PO_CT_MUA_HANG> MH_PO_CT_MUA_HANG { get; set; }
-        public virtual DbSet<MH_PO_MUA_HANG> MH_PO_MUA_HANG { get; set; }
         public virtual DbSet<MH_XL_YEU_CAU_HOI_GIA> MH_XL_YEU_CAU_HOI_GIA { get; set; }
         public virtual DbSet<MH_YEU_CAU_HOI_GIA> MH_YEU_CAU_HOI_GIA { get; set; }
         public virtual DbSet<NCC> NCCs { get; set; }
@@ -114,28 +97,45 @@ namespace ERP.Web.Models.Database
         public virtual DbSet<NCC_LOAI_HANG_CUNG_CAP> NCC_LOAI_HANG_CUNG_CAP { get; set; }
         public virtual DbSet<NCC_PUR_PHU_TRACH> NCC_PUR_PHU_TRACH { get; set; }
         public virtual DbSet<NCC_TK_NGAN_HANG> NCC_TK_NGAN_HANG { get; set; }
+        public virtual DbSet<NV_GIAO_VIEC> NV_GIAO_VIEC { get; set; }
+        public virtual DbSet<NV_LICH_LAM_VIEC> NV_LICH_LAM_VIEC { get; set; }
+        public virtual DbSet<CN_NGHIEP_VU_NHAN_VIEN> CN_NGHIEP_VU_NHAN_VIEN { get; set; }
+        public virtual DbSet<BH_CT_DON_BAN_HANG> BH_CT_DON_BAN_HANG { get; set; }
+        public virtual DbSet<BH_DE_NGHI_GIU_HANG> BH_DE_NGHI_GIU_HANG { get; set; }
+        public virtual DbSet<BH_DON_BAN_HANG> BH_DON_BAN_HANG { get; set; }
+        public virtual DbSet<BH_PHUONG_AN_KINH_DOANH> BH_PHUONG_AN_KINH_DOANH { get; set; }
+        public virtual DbSet<COMMENTS_CONG_NO_KH> COMMENTS_CONG_NO_KH { get; set; }
+        public virtual DbSet<DM_DINH_KHOAN_TU_DONG> DM_DINH_KHOAN_TU_DONG { get; set; }
+        public virtual DbSet<DM_MAU_SO_HOA_DON> DM_MAU_SO_HOA_DON { get; set; }
+        public virtual DbSet<KHO_CHUYEN_KHO> KHO_CHUYEN_KHO { get; set; }
+        public virtual DbSet<KHO_CT_CHUYEN_KHO> KHO_CT_CHUYEN_KHO { get; set; }
+        public virtual DbSet<KHO_CT_DNXH> KHO_CT_DNXH { get; set; }
+        public virtual DbSet<KHO_CT_NHAP_KHO> KHO_CT_NHAP_KHO { get; set; }
+        public virtual DbSet<KHO_CT_XUAT_KHO> KHO_CT_XUAT_KHO { get; set; }
+        public virtual DbSet<KHO_DNXH> KHO_DNXH { get; set; }
+        public virtual DbSet<KHO_HANG_CAN_GIU> KHO_HANG_CAN_GIU { get; set; }
+        public virtual DbSet<KHO_INIT_TACH_GOP_MA> KHO_INIT_TACH_GOP_MA { get; set; }
+        public virtual DbSet<MENU> MENUs { get; set; }
+        public virtual DbSet<MENU_USER> MENU_USER { get; set; }
+        public virtual DbSet<MH_CT_DE_NGHI_NHAP_KHO> MH_CT_DE_NGHI_NHAP_KHO { get; set; }
+        public virtual DbSet<MH_CT_MDV> MH_CT_MDV { get; set; }
+        public virtual DbSet<MH_DE_NGHI_JOIN_PO_MH> MH_DE_NGHI_JOIN_PO_MH { get; set; }
+        public virtual DbSet<MH_JOIN_BH> MH_JOIN_BH { get; set; }
+        public virtual DbSet<MH_MDV> MH_MDV { get; set; }
+        public virtual DbSet<MH_PO_CT_MUA_HANG> MH_PO_CT_MUA_HANG { get; set; }
+        public virtual DbSet<MH_PO_MUA_HANG> MH_PO_MUA_HANG { get; set; }
         public virtual DbSet<NH_CHUYEN_TIEN_NOI_BO> NH_CHUYEN_TIEN_NOI_BO { get; set; }
         public virtual DbSet<NH_CT_NTTK> NH_CT_NTTK { get; set; }
         public virtual DbSet<NH_CT_UNC> NH_CT_UNC { get; set; }
         public virtual DbSet<NH_NTTK> NH_NTTK { get; set; }
         public virtual DbSet<NH_UNC> NH_UNC { get; set; }
         public virtual DbSet<NOTIFICATION> NOTIFICATIONS { get; set; }
-        public virtual DbSet<NV_GIAO_VIEC> NV_GIAO_VIEC { get; set; }
-        public virtual DbSet<NV_LICH_LAM_VIEC> NV_LICH_LAM_VIEC { get; set; }
-        public virtual DbSet<NV_TINH_LUONG> NV_TINH_LUONG { get; set; }
-        public virtual DbSet<POST_CATEGORIES> POST_CATEGORIES { get; set; }
         public virtual DbSet<POST_COMMENTS> POST_COMMENTS { get; set; }
         public virtual DbSet<POST_KINHDOANH> POST_KINHDOANH { get; set; }
-        public virtual DbSet<POST> POSTS { get; set; }
         public virtual DbSet<QUY_CT_PHIEU_CHI> QUY_CT_PHIEU_CHI { get; set; }
         public virtual DbSet<QUY_CT_PHIEU_THU> QUY_CT_PHIEU_THU { get; set; }
         public virtual DbSet<QUY_PHIEU_CHI> QUY_PHIEU_CHI { get; set; }
         public virtual DbSet<QUY_PHIEU_THU> QUY_PHIEU_THU { get; set; }
-        public virtual DbSet<TONKHO_HANG> TONKHO_HANG { get; set; }
-        public virtual DbSet<TONKHO_HOPLONG> TONKHO_HOPLONG { get; set; }
-        public virtual DbSet<TONKHO_TADN> TONKHO_TADN { get; set; }
-        public virtual DbSet<TONKHO_TAHCM> TONKHO_TAHCM { get; set; }
-        public virtual DbSet<TONKHO_TAHP> TONKHO_TAHP { get; set; }
         public virtual DbSet<XL_DANG_KY_PHE_DUYET> XL_DANG_KY_PHE_DUYET { get; set; }
         public virtual DbSet<XL_THAM_CHIEU_CHUNG_TU> XL_THAM_CHIEU_CHUNG_TU { get; set; }
     
@@ -2228,6 +2228,11 @@ namespace ERP.Web.Models.Database
                 new ObjectParameter("sotrang", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Prod_KH_ListKhachKhongMuaGanDay_Result>("Prod_KH_ListKhachKhongMuaGanDay", macongtyParameter, isadminParameter, usernameParameter, sotrangParameter);
+        }
+    
+        public virtual ObjectResult<Prod_KH_ListLienHe_TheoNgay_Result> Prod_KH_ListLienHe_TheoNgay()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Prod_KH_ListLienHe_TheoNgay_Result>("Prod_KH_ListLienHe_TheoNgay");
         }
     
         public virtual int Prod_KH_LocKhachTheoSale(string macongty, string sale, string tukhoa, Nullable<bool> isadmin, Nullable<bool> ismarketing)

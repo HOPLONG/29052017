@@ -18,7 +18,7 @@ namespace ERP.Web.Models.Database
         public string MA_DANH_MUC { get; set; }
         public int MA_BAI_VIET { get; set; }
     
-        public virtual CATEGORy CATEGORy { get; set; }
         public virtual POST POST { get; set; }
+        public virtual CATEGORy CATEGORy { get; set; }
     }
 }

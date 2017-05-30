@@ -49,12 +49,12 @@ namespace ERP.Web.Models.Database
         public Nullable<double> THUE_SUAT_GTGT { get; set; }
         public Nullable<decimal> TIEN_THUE_GTGT { get; set; }
     
-        public virtual KH_LIEN_HE KH_LIEN_HE { get; set; }
-        public virtual BH_DON_HANG_DU_KIEN BH_DON_HANG_DU_KIEN { get; set; }
-        public virtual KH KH { get; set; }
         public virtual CCTC_NHAN_VIEN CCTC_NHAN_VIEN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BH_CT_BAO_GIA> BH_CT_BAO_GIA { get; set; }
+        public virtual KH KH { get; set; }
+        public virtual BH_DON_HANG_DU_KIEN BH_DON_HANG_DU_KIEN { get; set; }
+        public virtual KH_LIEN_HE KH_LIEN_HE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BH_DON_HANG_PO> BH_DON_HANG_PO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

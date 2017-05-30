@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ERP.Api
 {
@@ -9,6 +10,8 @@ namespace ERP.Api
     {
         public static void Register(HttpConfiguration config)
         {
+            var cors = new EnableCorsAttribute("27.72.144.148:8003", "*", "*");
+            config.EnableCors(cors);
             // Web API configuration and services
             var json = config.Formatters.JsonFormatter;
             json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;

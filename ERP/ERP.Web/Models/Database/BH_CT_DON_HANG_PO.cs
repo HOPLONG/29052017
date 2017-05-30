@@ -18,8 +18,8 @@ namespace ERP.Web.Models.Database
         public BH_CT_DON_HANG_PO()
         {
             this.KHO_GIU_HANG = new HashSet<KHO_GIU_HANG>();
-            this.KHO_HANG_CAN_GIU = new HashSet<KHO_HANG_CAN_GIU>();
             this.MH_HANG_CAN_DAT = new HashSet<MH_HANG_CAN_DAT>();
+            this.KHO_HANG_CAN_GIU = new HashSet<KHO_HANG_CAN_GIU>();
             this.MH_JOIN_BH = new HashSet<MH_JOIN_BH>();
         }
     
@@ -44,9 +44,9 @@ namespace ERP.Web.Models.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KHO_GIU_HANG> KHO_GIU_HANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHO_HANG_CAN_GIU> KHO_HANG_CAN_GIU { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MH_HANG_CAN_DAT> MH_HANG_CAN_DAT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHO_HANG_CAN_GIU> KHO_HANG_CAN_GIU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MH_JOIN_BH> MH_JOIN_BH { get; set; }
     }

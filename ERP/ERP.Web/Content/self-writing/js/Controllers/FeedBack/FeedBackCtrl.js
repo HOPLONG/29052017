@@ -4,7 +4,7 @@ app.controller('FeedBackCtrl', function ($scope, $http) {
     $scope.lisDS = [];
     var nguoiduyet = $('#nguoiduyet').val();
     // Lấy list DS phản hồi
-    $http.get(window.location.origin + '/api/Api_HT_PHAN_HOI_PHAN_MEM/GetHT_PHAN_HOI_PHAN_MEM/' + nguoiduyet)
+    $http.get('27.72.144.148:8003/api/Api_HT_PHAN_HOI_PHAN_MEM/GetHT_PHAN_HOI_PHAN_MEM/' + nguoiduyet)
     .then(function (response) {
         if (response.data) {
             $scope.lisDS = response.data;

@@ -226,7 +226,7 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     /*
     * get Đối Tượng
     */
-    //$http.get(window.location.origin + '/api/Api_KH')
+    //$http.get('27.72.144.148:8003/api/Api_KH')
     // .then(function (response) {
     //     if (response.data) {
     //         $scope.arrayDT = response.data;
@@ -288,7 +288,7 @@ function ctrlChiKhac($rootScope, $scope, $location, $http, $uibModal) {
     ///**
     //*Tìm Tài khoản tự động
     //*/
-    //$http.get(window.location.origin + '/api/DM_DINH_KHOAN_TU_DONG/MA_LOAI_CHUNG_TU/CHI')
+    //$http.get('27.72.144.148:8003/api/DM_DINH_KHOAN_TU_DONG/MA_LOAI_CHUNG_TU/CHI')
     // .then(function (response) {
     //     if (response.data) {
     //         $scope.sotk_no = response.data.tk_no;

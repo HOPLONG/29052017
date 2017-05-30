@@ -17,8 +17,8 @@ namespace ERP.Web.Models.Database
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHO_NHAP_KHO()
         {
-            this.KHO_CT_NHAP_KHO = new HashSet<KHO_CT_NHAP_KHO>();
             this.MH_DE_NGHI_NHAP_KHO = new HashSet<MH_DE_NGHI_NHAP_KHO>();
+            this.KHO_CT_NHAP_KHO = new HashSet<KHO_CT_NHAP_KHO>();
             this.MH_PO_MUA_HANG = new HashSet<MH_PO_MUA_HANG>();
         }
     
@@ -38,9 +38,9 @@ namespace ERP.Web.Models.Database
         public virtual CCTC_NHAN_VIEN CCTC_NHAN_VIEN { get; set; }
         public virtual CCTC_NHAN_VIEN CCTC_NHAN_VIEN1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHO_CT_NHAP_KHO> KHO_CT_NHAP_KHO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MH_DE_NGHI_NHAP_KHO> MH_DE_NGHI_NHAP_KHO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KHO_CT_NHAP_KHO> KHO_CT_NHAP_KHO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MH_PO_MUA_HANG> MH_PO_MUA_HANG { get; set; }
     }
